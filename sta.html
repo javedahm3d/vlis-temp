@@ -1,0 +1,2250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:image" content="images/sta/timingreport.JPG">
+  <meta name="description" content="Effective methodology for verifying the timing characteristics of a design without the use of test vectors Static Timing Analysis can be done only for Register-Transfer-Logic (RTL) designs Functionality of the design must be cleared before the design is subjected to STA. STA approach typically takes a fraction of the time it takes to run logic simulation">
+  <meta name="author" content="vlsi backend adventure">
+  <meta name="keyword" content="sta in physical design, STA in physical design, static timing analysis, timing analysis, sta in timing report, static timing analysis vlsi expert, static timing analysis udemy, static timing analysis tools, static timing analysis questions, static timing analysis problems pdf, static timing analysis ppt, static timing analysis nptel, static timing analysis course, what is dynamic timing analysis, difference between static and dynamic timing analysis in vlsi, sta flow in vlsi, static timing analysis, sta examples, sta synthesis, sta blogspot, sta tools, latch and flip flop difference, latch vs flip flop, delays in vlsi, delays in digital circuits, timing arc in vlsi, timing arc, unate meaning, positive unate, positive unate examples, non-unate logic, timing arc in vlsi, understanding primetime timing report, timing constraints, timing path groups in sta, clock latency, clock latency in vlsi, set clock uncertainty, clock uncertainty setup hold, hold uncertainty in vlsi, inter clock uncertainty, clock skew, uncertainty in static timing analysis, jitter clock uncertainty, clock jitter, difference between cppr and crpr, what is cppr in vlsi,crosstalk in common clock path, crpr in vlsi, clock pessimism removal, ocv in vlsi expert, derates in vlsi, timing_remove_clock_reconvergence_pessimism, setup time and hold time formula, setup and hold time for latches, how to avoid setup and hold time violations, what is setup time and hold time in flip-flop, setup hold time metastability, negative hold time, how to calculate setup and hold time in cadence, setup time and hold time interview questions, multicycle path setup and hold, multicycle path pdf, multi-cycle path and false path, what is false path, cross domain crossing, bottleneck analysis in physical design, different types of vt cells in vlsi, ulvt cells in vlsi, difference between hvt and lvt cells in vlsi, why lvt cells are more leaky, vt swap in vlsi, multi-vt libraries means, rvt in vlsi, time borrowing in vlsi, time borrowing vlsi expert, pba and gba in vlsitime borrowing xilinx, setup and hold time vlsi expert, setup time in flip-flop, slack borrowing, latch based timing analysis, group paths in vlsi, pba and gba in vlsi, pba vs gba in vlsi">
+  <link rel="shortcut icon" href="img/icon.png" alt="VLSI Back-End adventure">
+  <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+
+
+<style>
+      .unselectable {
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color: #000000;
+      }
+    </style>
+
+   <style>
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      div {
+        border: 0px dotted #000000;
+      }
+      .portrait {
+        height: 100%;
+        width: 40px;
+      }
+      .landscape {
+        height: 100%;
+        width: 80px;
+      }
+      .square {
+        height: 100%;
+        width: 100px;
+      }
+    </style>
+	<style type="text/css">
+.mobileShow {display: none;}
+
+/* Smartphone Portrait and Landscape */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px){ 
+.mobileShow {display: inline;}
+}
+.mobileHide { display: inline; }
+
+/* Smartphone Portrait and Landscape */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px){
+.mobileHide { display: none;}
+}
+</style>
+
+  <title>Static Timing Analysis | Physical Design | VLSI Back-End Adventure</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <link href="css/elegant-icons-style.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet" />
+  <!-- =======================================================
+    Theme Name: Feroz Ahmed
+    Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+
+
+
+
+  <!-- container section start -->
+  <section id="container" class="" >
+
+
+    <header class="header dark-bg" class="nav" style="position:fixed;" "top:0px;>
+      <div class="toggle-nav" ">
+        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+      </div>
+
+      <!--logo start-->
+      <a href="index.html" class="logo">VLSI <span class="lite">Back-End </span>Adventure</a>
+      <!--logo end-->
+
+      <div class="nav search-row" id="top_menu">
+        <!--  search form start -->
+        <ul class="nav top-menu">
+          <li>
+            <form class="navbar-form">
+              <input class="form-control" placeholder="Search" type="text">
+            </form>
+          </li>
+        </ul>
+        <!--  search form end -->
+      </div>
+      
+        <style>.goog-logo-link {   display:none !important; } .goog-te-gadget{ color: transparent !important;} </style>
+<div style="position:absolute; left:1000px;">   <div class="nav search-row" id="top_menu">
+<div id="google_translate_element"> </div>
+<script type="text/javascript">function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');}</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</div></div>
+      
+
+      <div class="top-nav notification-row">
+        <!-- notificatoin dropdown start-->
+        <ul class="nav pull-right top-menu">
+
+          <!-- task notificatoin start -->
+        
+            <ul class="dropdown-menu extended tasks-bar">
+              <div class="notify-arrow notify-arrow-blue"></div>
+            </ul>
+          
+         
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="">
+                            <span class="profile-ava">
+                                <img  src="img/feroz.jpg">
+                            </span>
+                            <span class="username">Feroz Ahmed</span>
+                            <b class="caret"></b>
+                        </a>
+            <ul class="dropdown-menu extended logout">
+              <div class="log-arrow-up"></div>
+              <li class="eborder-top">
+                <a href="https://www.linkedin.com/in/ferozchoudhary/"><i class="fa fa-linkedin"> </i> My LinkedIn Profile</a>
+              </li>
+              <li>
+                <a href="https://youtube.com/c/FerozAhmed_PhysicalDesign?sub_confirmation=1"><i class="fa fa-youtube"> </i>Youtube Channel</a>				
+              </li>
+			  <li>
+                <a href="http://t.me/VLSI_Learning"><i class="fa fa-telegram"> </i> Telegram</a>
+              </li>
+			   <li>
+                <a href="https://github.com/ferozer"><i class="fa fa-github"> </i> Github</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/rising_legend/"><i class="fa fa-instagram"> </i> Instagram</a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/zoref5619"><i class="fa fa-facebook"> </i> Facebook</a>
+              </li>
+              
+             
+              <li>
+              
+              </li>
+            </ul>
+          </li>
+      </div>
+	  
+    </header>
+    <!--header end-->
+
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse " style="position:fixed;" "top:0px;>
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu">
+          <li class="active">
+            <a class="" href="index.html">
+                          <i class="icon_house_alt"></i>
+                          <span>Home</span>
+                      </a>
+          </li>
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Physical Design</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="logic_synthesis.html">Logic Synthesis</a></li>
+              <li><a class="" href="pd_inputs.html">PD Inputs</a></li>
+			   <li><a class="" href="floorplan.html">Floorplan</a></li>
+              <li><a class="" href="powerplan.html">Powerplan</a></li>
+			   <li><a class="" href="placement.html">Placement</a></li>
+              <li><a class="" href="cts.html">Clock Tree Synthesis</a></li>
+			  <li><a class="" href="routing.html">Routing</a></li>
+              <li><a class="" href="sta.html">Static Timing Analysis</a></li>
+            </ul>
+          </li>
+		  
+		  <li>
+		   <a class="" href="pd_verification.html">
+                       <i class="icon_document_alt"></i>
+                          <span>PD Verification</span>
+                      </a></li>
+		  
+		  <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>PD Analysis</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="congestion_analysis.html">Congestion Analysis</a></li>
+              <li><a class="" href="power_analysis.html">Power Analysis</a></li>
+			   <li><a class="" href="ir_analysis.html">IR Analysis</a></li>
+            </ul>
+          </li>
+		  
+		  <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>PD Essentials</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="pd_issues.html">Issues in PD</a></li>
+              <li><a class="" href="pd_cells.html">Cells in PD</a></li>
+			   <li><a class="" href="io_design.html">IO Design</a></li>
+			     <li><a class="" href="delay_models.html">Delay Models</a></li>
+              <li><a class="" href="eco.html">ECO</a></li>
+			   <li><a class="" href="std_cell_types.html">Types of Std Cells</a></li>
+            </ul>
+          </li>
+		  
+		  
+		   <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Discontinuity</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="dfm_dfy.html">DFM/DFY</a></li>
+              <li><a class="" href="mc_mm_ocv.html">MC/MM/OCV</a></li>
+            </ul>
+          </li>
+		  
+		  <li>
+		   <a class="" href="videos.html">
+                       <i class="icon_desktop"></i>
+                          <span>Videos</span>
+                      </a></li>
+		<li>  <a class="" href="sta_numericals.html">
+                       <i class="icon_table"></i>
+                          <span>STA Numericals</span>
+                      </a>
+					  </li>
+		  
+		  
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_piechart"></i>
+                          <span>Q&A</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="pd_mcqs.html">PD MCQs</a></li>
+              <li><a class="" href="pd_qa.html">Physical Design</a></li>
+              <li><a class="" href="digital_electronics.html">Digital Electronics</a></li>
+			  <li><a class="" href="cmos_fundamentals.html">CMOS Fundamentals</a></li>
+			  <li><a class="" href="verilog.html">Verilog</a></li>
+              <li><a class="" href="tcl.html">TCL Scripting</a></li>
+              <li><a class="" href="perl.html">PERL Scripting</a></li>
+            </ul>
+          </li>
+          <li>
+		   <a class="" href="Extras.html">
+                       <i class="icon_document_alt"></i>
+                          <span>Extras</span>
+                      </a></li>
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+    <!--sidebar end-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+	  
+        <!--overview start-->
+        <div class="row">
+          <div class="col-lg-12">
+           
+            <ol class="breadcrumb">
+              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+              <li><a href="#">PD</a></li>
+			  <li><i class="fa fa-document"></i><a href="#">STA</a></li>
+            </ol>
+          </div>
+        </div>
+
+        
+          <!--/.col-->
+
+        </div>
+        <!--/.row-->
+
+
+       
+<!-- Services section -->
+
+	
+<div class="unselectable">
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+</head>
+<body>
+
+ <style>
+body  {
+  background-image: url("img/1231.jpg");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+</style>
+
+
+
+
+
+
+<!-- Today status end -->
+
+<a name="1"></a>
+
+        <div class="row">
+		
+		
+
+		<!--/col-->
+		 
+          <div class="col-md-2"  style="position:sticky; 
+		  top:-610px;">
+            	  <div class="row">
+  <div class="panel panel-default col-sm-14">
+<div class="emptyBlocks"></div>
+
+    <div class="panel-heading"><b>Content on this page</b></div>
+    <div class="panel-body"><div class="sidebar">
+
+<a href="#1"><li>Diff b/w DTA & STA</li></a>
+<a href="#2"><li>Static Timing Analysis</li></a>
+<a href="#3"><li>main steps in STA</li></a>
+<a href="#4"><li>STA(input & output)</li></a>
+<a href="#5"><li>Timing Report</li></a>
+<a href="#6"><li>Clocked storage elements</li></a>
+<a href="#9"><li>Delays </li></a>
+<a href="#10"><li>Pins related to clock </li></a>
+<a href="#11"><li>Timing Arc</li></a>
+<a href="#12"><li>Timing Unate</li></a>
+<a href="#7"><li>Clock definitions in STA</li></a>
+<a href="#13"><li>Timing Paths </li></a>
+<a href="#14"><li>Timing Path Groups </li></a>
+<a href="#15"><li>Clock Latency </li></a>
+<a href="#16"><li>Insertion Delay </li></a>
+<a href="#17"><li>Clock Uncertainty</li></a>
+<a href="#18"><li>Clock Skew </li></a>
+<a href="#19"><li>Clock Jitter </li></a>
+<a href="#20"><li>Glitch</li></a>
+<a href="#21"><li>Pulse width</li></a>
+<a href="#22"><li>Duty Cycle </li></a>
+<a href="#23"><li>Transition/Slew</li></a>
+<a href="#24"><li>Asynchronous Path</li></a>
+<a href="#25"><li>Critical Path</li></a>
+<a href="#26"><li>Shortest Path </li></a>
+<a href="#27"><li>Clock Gating Path</li></a>
+<a href="#28"><li>Launch path </li></a>
+<a href="#29"><li>Arrival Path </li></a>
+<a href="#30"><li>Required Time</li></a>
+<a href="#31"><li>Common Path Pessimism(CPP/CRPR)</li></a>
+<a href="#32"><li>Slack </li></a>
+<a href="#33"><li>Setup and Hold time</li></a>
+<a href="#34"><li>Setup & hold time violations</li></a>
+<a href="#35"><li>Recovery Time</li></a>
+<a href="#36"><li>Removal Time </li></a>
+<a href="#37"><li>Recovery & Removal time violations</li></a>
+<a href="#38"><li>Single Cycle path </li></a>
+<a href="#39"><li>Multi Cycle Path </li></a>
+<a href="#40"><li>Half Cycle Path</li></a>
+<a href="#41"><li>False Path</li></a>
+<a href="#42"><li>Clock Domain Crossing(CDC) </li></a>
+<a href="#43"><li>Clock Domain Synchronization Scheme</li></a>
+<a href="#44"><li>Bottleneck Analysis</li></a>
+<a href="#45"><li>Multi-VT Cells(HVT LVT SVT)</li></a>
+<a href="#46"><li>Time Borrowing/Stealing</li></a>
+<a href="#47"><li>Types of STA (PBA GBA)</li></a>
+<a href="#48"><li>Diff b/w PBA & GBA </li></a>
+<a href="#49"><li>Block based STA & Path based STA</li></a>
+    </div>
+  </div>
+</div>
+  </div>
+	 <!--/social-box-->
+          </div> 
+
+          <div class="col-lg-8 col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-heading" style="position:sticky; 
+		  top:60px;">
+		  <h2><a name="1"></a><a name="1"></a>
+                <i class="fa fa-flag-o red"></i><h2><b>Static Timing Analysis </h2></b>
+				
+                
+				
+              </div>
+              <div class="panel-body">
+                <table class="table bootstrap-datatable countries">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+				  
+				  
+			
+
+<style>
+			 .bullets {
+			 }
+			 .bullets li {
+			 list-style-type: square;
+			 )
+			</style>
+
+
+
+
+
+<h2> <a name="1"></a><b>Static Timing Analysis</b></h2>
+<hr>
+<h3><b>Difference between Dynamic Timing Analysis and Static Timing Analysis</b></h3>
+
+<table border="1" width="100%">
+<tr>
+<th bgcolor=”#ffffc9” width=“100%”> <center>Dynamic Timing Analysis </center></th>
+<th bgcolor=”#ffffcc” width=“100%”> <center>Static Timing Analysis </center></th>
+</tr>
+<tr>
+<td width=“100%”> Verifies functionality of the design by applying input vectors and checking for correct output vectors </td>
+<td width=“100%”> Checks Static Delay requirements of the circuit without any input or output vectors, so analysis times are relatively short and STA does not check for logical correctness of the design </td>
+</tr><tr>
+<td width=“100%”> Quality increases with the increase of input test vectors </td>
+<td width=“100%”> Clock related all information has to be fed to the design in the form of constraints and the correctness of the constraints decides the quality</td>
+</tr><tr>
+<td width=“100%”> Increased Test Vectors increase Simulation Time </td>
+<td width=“100%”> Timing can be analyzed for worst case and best case simultaneously and also all timing paths are considered</td>
+</tr><tr>
+<td width=“100%”> Can be used for synchronous as well as asynchronous designs </td>
+<td width=“100%”> Not suitable for asynchronous designs </td>
+</tr><tr>
+<td width=“100%”> Also best suitable for designs having clocks crossing multiple domains </td>
+<td width=“100%”> Not suitable for designs having clocks crossing multiple domains </td>
+</tr><tr>
+<td width=“100%”> Computational complexity involved in finding the Input Patterns/Vectors that produces maximum delay at the output </td>
+<td width=“100%”> Has more pessimism and thus gives maximum delay of the design and STA and it works with timing models </td>
+</tr><tr><a name="2"></a>
+</table><hr>
+	
+
+
+<h3><b>Static Timing Analysis</b></h3>
+<ul class="bullets"><li> Effective methodology for verifying the timing characteristics of a design without the use of test vectors
+<li>  Static Timing Analysis can be done only for Register-Transfer-Logic (RTL) designs
+<li>  Functionality of the design must be cleared before the design is subjected to STA
+<li>  STA approach typically takes a fraction of the time it takes to run logic simulation</ul><a name="3"></a></ul>
+
+STA is basically method of adding the net delays and cell delays to obtain path delays.
+<br>
+ then STA tool analyzes all paths from each and every start point to each and every end point and compares it against the constraint(timing specification) that exists for that path.
+<br><hr>
+<h3><b>Purpose of Static Timing Analysis</b></h3>
+<ul class="bullets">
+<li>Fist, STA calculates the path delays for optimization tools. then based on the path delays, the optimization tool chooses cells from the timing library to create a circuit that meets your timing requirement.</li>
+<li>Second, STA analyzes the timing of a circuit to verify that the circuit works at the specified frequency.</li>
+</ul><hr>
+
+<h3><b>Main steps of STA</b></h3>
+<ul class="bullets">
+<li> Break the design into sets of timing paths
+<li>Calculate the delay of each path                                            <a name="4"></a>
+<li> Check all path delays to see if the given timing constraints are met</ul>
+<hr>
+
+<h3><b> STA inputs and outputs</b></h3>
+
+
+<img src="images/sta/staio.JPG" alt="STA inputs and outputs"> <a name="5"></a><hr>
+
+
+<h3><b>Timing Report</b></h3>
+<img src="images/sta/timingreport1.JPG" alt="timing report"><br><br>
+<img src="images/sta/timingreport.JPG" alt="timing report"><hr>
+
+The above timing report is divided in 4 parts as<br>
+<ul class="bullets">
+<b><u>Header</u></b> 
+<li>it consist of start point(FF1) and end point(FF2) 
+<li>path group which tells for which timing path group it belogs.
+<li>Path type : here it is max which states setup and if it was min then it is hold.</ul>
+
+<ul class="bullets">
+<b><u>Data Arrival Section</u></b>
+<li>reports the total time taken to arrive at D Pin of Flip flop 2. (ref fig just above timing report) 
+</ul>
+
+<ul class="bullets">
+<b><u>Data Required Section</u></b>
+<li>reports the total time taken to arrive the clock pin of FF1 minus the setup time of FF2. (ref fig just above timing report) 
+</ul>
+
+<ul class="bullets">
+<b><u>Slack</u></b>
+<li>timing difference between required and arrival time i.e (RT-AT)
+</ul>
+
+<br>
+Typical symbols which can be seen in PrimeTime report :
+<ul class="bullets">
+<li>“&” after an incremental delay number shows that the delay number is calculated with Resistor-Capacitor (RC) network back-annotation.
+<li> “*” for Standard Delay Format (SDF) back-annotation
+<li> “+” for lumped RC
+<li> “H” for hybrid annotation
+<li> “r” in the path column for the rising edge of the signal
+<li> “f” in the path column for the falling edge of the signal<br><br>
+<li>Most timing reports use ns for the time unit. However, you can use the PrimeTime<a name="6"></a>
+commandreport_unitsto report all theunits, such as capacitance, resistance, time,
+and voltage units used by the design.
+</ul><hr>
+	
+
+<h3><b>Clocked Storage Elements</b></h3>
+
+<h4><b>Transparent Latch, Level Sensitive</h4></b>
+<li> Data passes through Latch when clock high, latched when clock is low<br>
+<img src="images/sta/latch.JPG" alt="latch vs flip flop, difference between latch and flip flop"><br>
+
+<h4><b> D-Type Register or Flip-Flop, Edge-Triggered </h4></b>
+<li> Data captured on rising edge of clock, held for rest of the cycle<a name="9"></a><br>
+<img src="images/sta/flop.JPG" alt="latch vs flip flop, difference between latch and flip flop"><hr>
+
+<h3><b>Delays</b></h3>
+<ul class="bullets">
+<li>Time taken by a signal to propagate through a Cell or Net
+<li> Actual Path Delay is sum of net and Cell Delays along the timing path
+<li> Cell Delay is a function of Input Transition Time (Slew Rate), Total Output Load (Net Cap + Sum of attached pin caps) and Process Parameters (Temperature, Power Level)</ul>
+
+<b> Intrinsic delay</b><br>
+ <li>Internal to the Cell from Input pin to Output pin caused by internal capacitance
+<br><br>
+<b> Propagation Delay</b><br>
+<li> Delay by a cell for a change of input signal to result a change at output signal as a function of Input Slew and Output load
+<li> Propagation Delay can be Low to High (tPLH) and High to Low (tPHL)
+<li> Maximum Propagation Delay (Clock to Q) is considered for Setup check
+<br><br>
+<b> Contamination Delay</b><br>
+<li> Best case delay from valid input to output
+<li> Minimum Propagation Delay (Clock to Q) which is called Contamination Delay is considered for Hold check
+<br><br>
+<b> Net Delay</b><br>                   <a name="10"></a>
+<li> Total time for charging/discharging all the parasitic present in the given net
+<hr>
+
+
+<h3><b>Pins related to Clock Design</b></h3>
+<img src="images/sta/pins.JPG" alt="clock pins"><br>
+
+<b> Start/ Source / Root Pins</b><br>
+<li> Source pin of a Clock<br><br>
+
+<b> Stop/ Sink/ Leaf Pins</b><br>
+<li> All Clock Pins of Flip Flops<br>
+<li> Clock wont propagate after this Pin<br><br>
+
+<b> Through pin</b><br>
+<li> To make a Clock pin of a flop not a CTS Leaf pin<br><br>
+
+<b> Preserved Pin</b><br>
+<li> If we need to preserve a pin w.r.t. location etc.<br><br>
+
+<b> Exclude/ Ignore Pins</b><br>
+<li> All non-clock pins (D pin of Flip Flops or combo logic inputs)
+<li> Not considered for Clock propagation<br><br>
+
+<b> Float Pins (Implicit Stop/ Macro Model)</b><br>
+<li> Same as Stop/ Sink Pin but internal Clock Latency of it is considered for Clock Tree
+<li> Its actually entry pin of the Hard Macro<br><br>
+
+<b> Explicit Sync (Stop) Pin</b>
+<li> Input of combo logic while considering Clock Tree
+<li> Important while considering Clock Gating<br><br>
+
+<b> Explicit Exclude (Ignore) Sync Pin</b><br>
+<li> Clock Pin of Flop is not considered as Sync/ Stop pin
+<li> This pin is due to Clock Gating concept<a name="11"></a>
+<li> In clock gating the signal will be given to AND Gate<br><br><hr>
+	
+
+
+<h3><b>Timing Arc</b></h3>
+<img src="images/sta/arc.JPG" alt="timing arc">
+<ul class="bullets">
+<li> Timing Arc is internal to the cell
+<li> Combinational Cells has Timing Arcs from each Input to each Output of the cell
+<li> Flip-flops have Timing Arcs from the Clock Input pin to Data Output Q pin (Propagation delay/ Delay Arc) and from Clock Input pin to Data Input D pin (setup, hold checks/ Constraint Arc)
+<li> Latches have 2 timing arcs:
+<ul class="bullets">
+<li> Clock pin to Output Q pin, when D is stable<a name="12"></a>
+<li> Data D pin to Output Q pin when D changes (Latch is transparent)
+</ul></ul><hr>
+
+<h3><b>Timing Unate</b></h3>
+<img src="images/sta/unate.JPG" alt="timing unate"><br>
+<b>positive unate</b> if a rising transition on an input causes the output to rise (or
+not to change) and a falling transition on an input causes the output to fall
+(or not to change). For example, the timing arcs for <i>AND</i> and <i>OR</i> type cells are
+positive unate. See Figure(a)
+<br><br>
+A <b>negative unate</b> timing arc is one where a rising transition on an input
+causes the output to have a falling transition (or not to change) and a fall ing transition on an input causes the output to have a rising transition (or
+not to change). For example, the timing arcs for <i>NAND</i> and <i>NOR</i> type cells are negative unate.See Figure(b)<br><br>
+
+In a <b>non-unate timing arc</b>, the output transition cannot be determined solely from the direction of change of an input but also depends upon the state
+of the other inputs. For example, the timing arcs in an <i>XOR cell (exclusive-or)</i>
+are non-unate. See Figure(c).<br><br>
+Unateness is important for timing as it specifies how the edges (transitions)
+can propagate through a cell and how they appear at the output of the cell.<br><br>
+One can take advantage of the non-unateness property of a timing arc,
+such as when an xor cell is used, to invert the polarity of a clock. See the exaample below(figure). If input POLCTRL is a logic-0, the clock DDRCLK on
+output of the cell UXOR0 has the same polarity as the input clock MEMCLK. If POLCTRL is a logic-1, the clock on the output of the cell UXOR0 has
+the opposite polarity as the input clock MEMCLK.
+<br>
+<img src="images/sta/nonunate.JPG" alt="timing unate">     <a name="7"></a><br><hr>
+
+	
+
+<h3><b>Clock definitions in STA</b></h3>
+<ul class="bullets">
+<li> <b>Synchronous Clocks</b>
+<ul class="bullets">
+<li> 2 clocks are synchronous w.r.t. each other
+<li>Timing paths launched by one clock and captured by another</ul>
+
+<li><b> Asynchronous Clocks</b>
+<ul class="bullets">
+<li> 2 clocks are asynchronous w.r.t. each other
+<li> If no timing relation, STA can’t be applied, so the tool wont check the timing</ul>
+
+<li><b> Mutually-Exclusive Clocks</b>
+<ul class="bullets">
+<li> Only one clock can be active at the circuit at any given time</ul>
+
+<li><b> Generated Clocks</b>
+<ul class="bullets"><li> Clock generated from a clock source as a multiple of the source clock frequency
+<li> The frequency can be a multiple or can be a divided by of the source clock</ul>
+
+<li><b> Virtual Clocks</b>
+<ul class="bullets">
+<li> Exists but not associated with any pin or port of the design
+<li> Used as a reference in STA to specify Input Delays and Output Loads relative to a clock (Needed to fix the Input2Reg and Reg2Output Violations)<a name="13"></a>
+<li> By defining Virtual Clock IO Constraints can be defined relative to this Virtual Clock with no specification of the source port or pin
+</ul></ul><hr>
+
+<h3><b>Timing Paths</b></h3>
+A Timing Path is a point-to-point path in a design which can propagate data from one flip-flop to another
+<ul class="bullets">
+<li> Each path has a start point and an end point
+<li> Start point: Input ports or Clock pins of flip-flops
+<li> Endpoints: Output ports or Data input pins of flip-flops</ul><a name="14"></a>
+<img src="images/sta/timingpaths.JPG" alt="timing paths, sta"><hr>
+
+<h3><b>Timing Path Groups</b></h3>
+<img src="images/sta/timingpathgroups.JPG" alt="timing path groups, sta">
+<ul class="bullets">
+Timing paths are grouped into path groups by the clocks controlling their endpoints<br><br>
+<li> Input pin/port to Register
+<ul><li> Delays off-chip + Combinational logic delays up to the first sequential device</ul>
+<li> Register to Register
+<ul class="bullets">
+<li> Start at a sequential device
+<li> CLK-to-Q transition delay + the combinational logic delay + external delay requirements</ul>
+<li> Register to Output pin/port
+<ul class="bullets">
+<li> Delay and timing constraint (Setup and Hold) times between sequential devices for synchronous clocks + source and destination clock propagation times</ul>
+<li> Input pin/port to Output pin/port<a name="15"></a>
+<ul class="bullets">
+<li> Delays off-chip + combinational logic delays + external delay requirements
+</ul></ul><hr>
+	
+
+<h3><b>Clock Latency</b></h3>
+<ul class="bullets">
+<ul class="bullets"><li> Total time taken by the clock signal to reach the input of the register
+<li> Source latency is the time between clock sources to clock definition ports<a name="16"></a>
+<li> Network latency is the time between clock definition ports to clock leaf cells in the design</ul></ul>
+
+<h3> <b>Insertion Delay (ID)</b></h3>
+<ul class="bullets"><ul class="bullets"><li> ID is the clock latency, but after Clock Tree is synthesized.
+<img src="images/cts/clocklatency1.JPG" alt="clock latency">
+<li> ID is the physical delay and Clock Latency is the virtual delay<a name="17"></a> 
+<li> Latency is a target given to the tool through SDC file or clock tree attribute file and Insertion Delay is the achieved delay value after CTS
+</ul></ul><hr>
+
+<h3><b>Clock Uncertainty</b></h3>
+<ul class="bullets">
+<li> Clock Uncertainty is the time difference between the arrivals of clock signals at registers in one clock domain or between domains<a name="18"></a>
+<li> Uncertainties include Clock Skew, Clock Jitter and Clock Margin</ul><br>
+
+<center> <img src="images/sta/skew.JPG" alt="clock skew"> </center>
+<ul class="bullets">
+<li> <b>Clock Skew</b> refers to the absolute time difference in clock signal arrival between two points in the clock network<br>
+&nbsp&nbsp&nbsp&nbsp <b>TLAUNCH_CLOCK - TCAPTURE_CLOCK = TSKEW</b><br><br>
+<li> <b>Positive Skew</b> occurs when the Capture Clock is late w.r.t. Launch Clock<br><br>
+<li> <b>Negative Skew</b> occurs when the Capture Clock is early w.r.t. Launch Clock<br><br>
+<li> <b>Local Skew</b> is the Skew between the clock phase delays of two flip-flops which are the Source and Target flop of a path (Source and Destination flop)<br><br><a name="19"></a>
+<li> <b>Global Skew</b> is the difference between the longest and shortest branch of a Clock Tree (Maximum Insertion Delay – Minimum Insertion Delay)
+</ul><hr>
+
+<h3><b>Clock Jitter</b></h3>
+<ul class="bullets">
+<li> Jitter is the short-term variations of a signal with respect to its ideal position in time
+<li> The two major components of Jitter are random Jitter and deterministic Jitter
+<li> Factors causing Jitter includes imperfections in Clock oscillator, supply voltage variations, Temperature variations, Crosstalk</ul><a name="20"></a>
+<img src="images/cts/jitter1.JPG" alt="clock jitter"><br>
+<h3><b>Glitch</b></h3>
+<ul class="bullets">
+<li> Unexpected switching of any waveform
+<li> Due to late arrival time of Gate and it is for a short period of time
+<li> Cause extra delay and also it can cause extra power from false transitions</ul><hr>          <a name="21"></a>
+<img src="images/sta/clock.JPG"alt="jitter"><br><hr>
+
+<h4><b>Pulse Width</b></h4>
+<ul class="bullets">
+<li> Pulse Width is the time between the active and inactive states of the same signal
+<li> Minimum high pulse width is the amount of time after the rising edge of a clock, that the clock signal of a clocked device must remain stable          <a name="22"></a>
+<li> Minimum low pulse width is the amount of time after the falling edge of a clock, that the clock signal of a clocked device must remain stable</ul>
+
+<h4> <b>Duty Cycle</b></h4>
+<ul class="bullets">
+<li> Percentage of clock period having high pulse                          <a name="23"></a>
+<li> Typically clock waveforms are of 50% Duty Cycle</ul>
+
+<h4> <b>Transition/ Slew</b></h4>
+<ul class="bullets">
+<li> Time taken by a signal to change the state (Volts/Second)
+<li> Rise Slew (tR) is called Rise Time and Fall Slew (tF) is called Fall Time
+<li> Minimum/ Maximum Transition is the Minimum/ Maximum slope allowed at leaf pins                         <a name="24"></a>
+<li> Transition affects Power Dissipation, Latency and Pulse width</ul>
+
+<h4><b>Asynchronous Path</b></h4>                         <a name="25"></a>
+<ul class="bullets">
+<li> A path from an input port to an asynchronous set or clear pin of a sequential element</ul>
+
+<h4> <b>Critical Path</b></h4>
+<ul class="bullets">
+<li> The path which creates longest delay
+<li> Also called worst path/ late path/ max. path                         <a name="26"></a>
+<li> Timing sensitive functional paths no additional gates are allowed to be added to the path</ul>
+
+<h4><b>Shortest Path</b></h4>
+<ul class="bullets">
+<li> One that takes the shortest time; this is also called the best path or early path or a min path</ul>                         <a name="27"></a>
+<img src="images/sta/critical.JPG"alt="timing analysis"><hr>
+
+<h4><b>Clock Gating Path</b></h4>
+<ul class="bullets">
+<li> Path passed through a “gated element” to achieve additional advantages
+<li> Clock Gating transformation does not change the state of the flops and register</ul>                         <a name="28"></a>
+<img src="images/sta/cgp.JPG" alt="clock gating path"><hr>
+
+<h4><b>Launch Path</b></h4>                         <a name="29"></a>
+<ul class="bullets">
+<li> Launch path is launch clock path which is responsible for launching the data at launch flip flop</ul>
+
+<h4><b> Capture Path</b></h4>                         <a name="30"></a>
+<ul class="bullets">
+<li> Capture path is capture clock path which is responsible for capturing the data at capture flip flop</ul>
+
+<h4><b> Arrival Time</b></h4>                         <a name="31"></a>
+<ul class="bullets">
+<li> Launch path and data path together constitute arrival time of data at the input of capture flip-flop</ul>
+
+<h4><b>Required Time</b></h4>
+<ul class="bullets">
+<li> Capture clock period and its path delay together constitute required time of data at the input of capture register</ul>                         <a name="32"></a>
+<center><img src="images/sta/123.JPG" alt="timing analysis"></center><hr>
+
+
+
+
+<h3><b>Common Path Pessimism</b></h3>
+<ul class="bullets">
+<li> Same Clock Path may be a Launch Path for one Data Path and can be a Capture Path for another Data Path
+<li> While doing OCV derating, same path may get both Min./ Max. delay
+<li> But a path can have either as a Maximum delay or a Minimum delay (or anything in between) but never both delays at the same time
+<li> STA tools will have techniques to remove artificially introduced pessimism between the Launch Clock Path and the Capture Clock Path
+</ul>                         <a name="33"></a>
+<img src="images/sta/crpr.JPG" alt="crpr, clock reconvergence pessimism removal"><hr>
+
+<h4><b>Slack</b></h4>
+<ul class="bullets">
+<li> Difference between Required Time (RT) and Arrival Time (AT)
+<li> Positive Slack at a node implies that the arrival time at that node may be increased without affecting the overall delay of the circuit                         <a name="34"></a>
+<li> Negative Slack implies that a path is too slow, and the path must speed up if the whole circuit is to work at the desired speed</ul>
+
+<h4> <b>Setup Time</b></h4>
+Setup time is the minimum amount of time the data signal should be held steady before the clock event so that the data are reliably sampled by the clock<br>
+<b>TLAUNCH_CLOCK + TCLK-Q_MAX + TCOMB_MAX ≤ TCAPTURE_CLOCK - TSETUP</b><br><br>
+
+<h4><b>Hold Time</b></h4>
+Hold time is the minimum amount of time the data signal should be held steady after the clock event so that the data are reliably sampled<br>                         <a name="35"></a>
+<b>TLAUNCH CLOCK + TCLK-Q_MIN + TCOMBO_MIN ≥ TCAPTURE_CLOCK + THOLD</b><hr>
+
+<h3><b>Setup Time and Hold Time Violations</b></h3>
+<ul class="bullets">
+<li> If Setup time, T<sub>SETUP</sub> for a flip-flop and if the data is not stable before T<sub>SETUP</sub> from the active edge of clock, then there is a Setup Violation at that flip-flop
+<li> If hold time, T<sub>HOLD</sub> for a flip flop and if the data is not stable after T<sub>HOLD</sub> time from the active edge of clock, then there is a hold violation at that flip-flop
+<li> For a single cycle circuit the signal has to propagate through Data path in one clock cycle
+</ul>                         <a name="36"></a>
+<img src="images/sta/sethold.JPG" alt="sta, setup hold"> <br><hr>
+
+<h3><b>Recovery Time</b></h3>
+<ul class="bullets">
+<li> Recovery time is the minimum time that an asynchronous control input pin must be stable after being de-asserted and before the next clock transition (active edge)</ul>
+
+<h3><b> Removal Time</b></h3>                         <a name="37"></a>
+<ul class="bullets">
+<li> Removal time is the minimum time that an asynchronous control input pin must be stable before being de-asserted and before the previous clock transition (active edge)
+</ul>
+
+<h3><b>Recovery Time and Removal Time Violations</b></h3>
+<ul class="bullets">
+<li>This check is to ensure that the asynchronously signal rise/ fall edge is not occurring at the clock edge; it should be some time before or after the clock edge
+<li> If that violates, then Recovery Time and Removal Time Violations
+<li> Although a flip-flop is asynchronously SET or CLEAR, the negation from its RESET state is synchronous
+</ul>                         <a name="38"></a>
+<img src="images/sta/removal.JPG" alt="recovery and removal timing"><br><hr>
+
+<h3><b>Single Cycle Path</b></h3>
+<ul class="bullets">
+<li> Timing path that is designed to take only one clock cycle for the data to propagate from the start point to the endpoint
+<li> Start point and endpoint are flops clocked by the same clock
+<li> By default tool will consider all timing paths as single cycle paths</ul>                         <a name="39"></a>
+<img src="images/sta/scp.JPG" alt="single cycle path"><br><hr>
+
+<h3><b>Multi-Cycle Path</b></h3>
+<ul class="bullets">
+<li> Timing path that is designed to take more than one clock cycle for the data to propagate from the start point to the endpoint
+<li> Start point and endpoint are flops clocked by the same clock
+<li> Need to specify the Launch edge and Capturing edge in SDC</ul>                         <a name="40"></a>
+<img src="images/sta/mcp.JPG" alt="multi cycle path"><br><hr>
+
+<h3><b>Half Cycle Path</b></h3>
+<ul class="bullets">
+<li> Timing path that is designed to take half clock cycle (both of the clock edges) for the data to propagate from the start point to the endpoint
+<li> Start point and endpoint are flops clocked by the same clock
+<li> No need to specify the Launch edge and Capturing edge in SDC, since the tool can identify it from the netlist</ul>                         <a name="41"></a>
+<img src="images/sta/hcp.JPG" alt="half cycle path"><br><hr>
+
+<h3><b>False Path</b></h3>
+<ul class="bullets">
+<li> Physically exist in the design but are Logically/ Functionally inactive/incorrect path
+<li> Means no data is transferred from Start Point to End Point
+<li> The goal in STA is to do timing analysis on all “true” timing paths, so these paths are excluded from timing analysis
+<li> Similarly timing can be disable for a pin or port or cell where the delay will be computed but won’t report it</ul>                         <a name="42"></a>
+<img src="images/sta/fp.JPG" alt="false path"><br><hr>
+	
+
+
+<h3><b>Clock Domain Crossing (CDC)</b></h3>
+<ul class="bullets">
+<li> For designs with Asynchronous Clock Domains, the CDC signal violates the Setup/ Hold window of the receiving clock, resulting in metastability
+<li> Metastability results in unpredicted values and unpredictable delays
+<li> Those clocks has to be balanced together else, due to difference in the latency that may lead to timing violations
+<li> Max. Delay Constraint is used to make CDC paths to get synchronized</ul>                         <a name="43"></a>
+<img src="images/sta/cdc.JPG" alt="clock domain crossing"><br><hr>
+
+<h3><b>Clock Domain Synchronization Scheme</b></h3>
+<ul class="bullets">
+<li> Pulse Width check
+<ul class="bullets">
+<li> The control signals is stable for longer than one receive clock period
+<li> Ensures that data will not be lost due to inadequate width of the control signal</ul>
+
+<li> Data Stability check
+<ul class="bullets">
+<li> The data updated by the transmit domain cannot be captured by the immediately following receive clock edge
+<li> Ensures that the captured data will not be metastable in the receive domain</ul></ul>                         <a name="44"></a>
+<img src="images/sta/cdcscheme.JPG" alt="metastability"><br><hr>
+
+<h3><b>Bottleneck Analysis</b></h3>
+<ul class="bullets">
+<li> Lists the cells causing the timing violations on multiple paths
+<li> By identifying and fixing the violation caused by a Bottleneck Cell improved timing can be achieved</ul>                         <a name="45"></a>
+<img src="images/sta/bottleneck.JPG" alt="bottleneck analysis"><br><hr>
+
+<h3><b>Multi-VT Cells</b> </h3>
+<ul class="bullets">
+<li> Different threshold voltages are achieved by implanting dopants in different concentration
+<li> Need Multi-VT Library
+<li> Sub-threshold leakage varies exponentially with VT compared to the weaker dependency of delay over VT
+<li> If the optimization target is power performance, first use the HVT cells library and then try LVT cells
+<li> If the optimization target is to meet timing then first use LVT cells and then HVT cells
+<li>If you swap the capture flop from SVT to LVT or HVT, there will be very minimal setup/hold impact in most flops, it is of zero impact for hold
+<li> If you swap the launch flop from SVT to LVT or HVT, Setup will be improve and hold will be impacted correspondingly</ul>
+
+<h4><b> High Voltage Threshold (HVT )</b></h4>
+<ul class="bullets">
+<li> Use in non-timing critical paths
+<li> Use in power critical paths
+<li> Has low leakage and low speed</ul>
+
+<h4><b> Low Voltage Threshold (LVT )</b></h4>
+<ul class="bullets">
+<li> Use in timing critical paths
+<li> Use in non-power critical paths
+<li> Has high leakage and high speed</ul>
+
+<h4> Standard Voltage Threshold/ Regular Voltage Threshold (SVT/ RVT) </h4>                         <a name="46"></a>
+<ul class="bullets">
+<li> Medium delay and medium power requirement</ul>
+<hr>
+	
+
+
+<h3><b>Time Borrowing</b></h3>
+<ul class="bullets">
+<li> Time Borrowing is basically for Latched based Timing Analysis
+<li> Edge-triggered flip-flops change states at the clock edges, whereas latches change states as long as the clock pin is enabled
+<li> In latch based design longer combinational path can be compensated by shorter path delays in the subsequent logic stages
+<li> The technique of Borrowing Time from the shorter paths of the subsequent logic stages to the longer path is called Time Borrowing or Cycle Stealing<br>
+<img src="images/sta/timeborrowing.JPG" alt="time borrowing"><br>
+<li> Time Borrowing typically only affects setup slack calculation since time borrowing slows data arrival times
+<li> When the clocks of the Launching and Capturing Latches are out of phase, time borrowing is not to happen
+<li> Timing borrowing can be multistage
+<li> Maximum Borrow Time: Clock Pulse Width minus the library Setup Time of the Latch
+<li> Negative Borrow Time: Arrival Time minus the clock edge is a negative number, the amount of time borrowing is negative (no borrowing)</ul>
+
+<h3><b>Time Borrowing: Scenarios</b></h3>
+<img src="images/sta/scenario.JPG" alt="time borrowing">
+<ul class="bullets">
+<li> Scenario 1: When data is launching from a positive edge triggered flip flop and capture is to a negative level sensitive latch
+<li> Scenario 2: When launch is from a negative level sensitive latch and capture is to a positive edge triggered flip flop                         <a name="47"></a>
+<li> Scenario 3: When launch and capture are from positive level sensitive latches</ul><hr>
+
+<h3><b>Types of Static Timing Analysis</b></h3>
+<ul class="bullets">
+<li> Path Based STA (PBA)
+<ul class="bullets">
+<li> First, extract all possible topological paths
+<li> Next, for each path calculate it’s delay and compare it with endpoint (required) value
+<li> Calculate the Arrival Time (AT) by adding cell delay in timing paths
+<li> Check all path delays to see if the given Required Arrival Time (RAT) is met</ul>
+
+<li> Graph Based STA (GBA)
+<ul class="bullets">
+<li> Two types of timing data :
+<li> Arrival times, AT (propagated forward from inputs)
+<li> Required Arrival Times RAT (propagated from outputs)
+<li> Slack is calculated on every design element: Slack = RT – AT</ul></ul>                         <a name="48"></a>
+<img src="images/sta/graph.JPG" alt="graph based sta"><hr>
+
+<h3><b> Difference between Path Based STA(PBA) and Graphh Based STA(GBA) </b></h3>                         <a name="49"></a>
+<img src="images/sta/gbapba.JPG"alt="pba gba"><hr>
+
+<h3><b>Block-based STA vs. Path-based STA (example)</b></h3>
+<img src="images/sta/bps.JPG" alt="timing analysis, static timming analysis "><hr>
+				  
+				  
+				  
+                  </tbody>
+                </table>
+                
+                
+              </div>
+
+            </div>
+
+          </div>
+          
+		  
+		  
+		  
+	
+		  
+		
+			  
+ <div class="col-md-2" style="position:sticky; 
+		  top:-1120px;">
+            	  <div class="row">
+  <div class="panel panel-default col-sm-14">
+<div class="emptyBlocks"></div>
+
+    
+    <div class="panel-body"><div class="sidebar">
+
+
+
+
+
+
+
+
+
+<center><a href="pd_qa.html" ><span class="icon_download_alt"></span> <img src="images/book.jpg"></a>	</center>
+	
+      
+<BR>
+            <div class="btn-row">
+                  <div class="btn-group-vertical">
+				  
+                    <a href="digital_electronics.html"><button class="btn btn-default" type="button">Digital Electronics Q&A </button></a>
+                    <a href="pd_mcqs.html"><button class="btn btn-default" type="button"> Physical Design MCQs </button></a>
+					<a href="sta_numericals.html"><button class="btn btn-default" type="button"> STA Numericals</button></a>
+                    <a href="pd_verification.html"><button class="btn btn-default" type="button"> PD Verification</button></a>
+				  </div>
+                </div>
+
+				
+				
+
+		
+				
+    </div>
+	
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="panel-group wrap" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Logic Synthesis
+        </a>
+      </h4> </div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">  <div class="panel-body">
+       <ul class="bullets">
+<li>What is synthesis?</li>
+<li>Goals of synthesis</li>
+<li>Synthesis Flow</li>
+<li>Synthesis (input & output)</li>
+<li>HDL file gen. & lib setup</li>
+<li>Reading files</li>
+<li>Design envi. Constraints </li>
+<li>Compile</li>
+<li>Generate Reports</li>
+<li>Write files<br></li>
+</ul><center><a class="btn btn-danger" href="logic_synthesis.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="headingTwo">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          PD Inputs
+        </a>
+      </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">       <ul class="bullets">
+<li>Netlist(.v or .vhd)</li>
+<li>Constraints</li>
+<li>Liberty Timing File(.lib or .db)</li>
+<li>Library Exchange Format(LEF)</li>
+<li>Technology Related files</li>
+<li>TLU+ File</li>
+<li>Milkyway Library</li>
+<li>Power Specification File</li>
+<li>Optimization Directives</li>
+<li>Design Exchange Formats</li>
+<li>Clock Tree Constraints/ Specification</li>
+<li>IO Information File</li></ul>
+<center><a class="btn btn-danger" href="pd_inputs.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="headingThree">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          FloorPlan
+        </a>
+      </h4>
+        </div>
+        
+		<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body"><ul class="bullets">
+<li>import design</li>
+<li>sanity checks</li>
+<li>partitioning (flat and hierarchy)</li>
+<li>objectives of floorplan</li>
+<li>Inputs of floorplan</li>
+<li>Floorplan flowchart</li>
+<li>Floorplan Techniques</li>
+<li>Terminologies and definitions  </li>
+<li>Steps in FloorPlan </li>
+<li>Utilization</li>
+<li>IO Placement</li>
+<li>Macro Placement</li>
+<li>Macro Placement Tips</li>
+<li>Blockages (soft,hard,partial)</li>
+<li>Halo/keepout margin</li>
+<li>Issues arises due to bad floor-plan)</li>
+<li>FloorPlan Qualifications</li>
+<li>FloorPlan Output</li></ul>
+<center><a class="btn btn-danger" href="floorplan.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="headingFour">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          PowerPlan
+        </a>
+      </h4>
+        </div>
+        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+          <div class="panel-body"><ul class="bullets">
+<li>levels of power distribution </li>
+<li>Power Management</li>
+<li>Powerplanning involves</li>
+<li>Inputs of powerplan</li>
+<li>Properties of ideal powerplan</li>
+<li>Power Information </li>
+<li>PowerPlan calculations</li>
+<li>Sub-Block configuration</li>
+<li>fullchip configuration</li>
+<li>UPF Content</li>
+<li>Isolation Cell</li>
+<li>Level Shifters</li>
+<li>Retention Registers</li>
+<li>Power Switches</li>
+<li>Types of Power dissipation</li>
+<li>IR Drop</li>
+<li>Electromigration</li></ul>
+<center><a class="btn btn-danger" href="powerplan.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="headingFour">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFour">
+          Placement
+        </a>
+      </h4>
+        </div>
+        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+          <div class="panel-body"><ul class="bullets">
+<li>Pre-Placement</li>
+<li>Pre-Placement Optimization</li>
+<li>Placement</li>
+<li>Placement Objectives</li>
+<li>Goals of Placement</li>
+<li>Inputs of Placement</li>
+<li>Checks Before placement </li>
+<li>Placement Methods(Timing & Congestion)</li>
+<li>Placement Steps</li>
+<li>Placement Optimization </li>
+<li>Placement Qualifications</li>
+<li>Placement Outputs</li></ul>
+<center><a class="btn btn-danger" href="placement.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="heading8">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapseFour">
+          CTS
+        </a>
+      </h4>
+        </div>
+        <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+          <div class="panel-body"><ul class="bullets">
+<li>Pre-CTS Optimization</li></a>
+<li>CTS</li></a>
+<li>Diff b/w HFNS & CTS</li></a>
+<li>Diff b/w Clock & normal buffer</li></a>
+<li>CTS inputs</li></a>
+<li>CTS Goals</li></a>
+<li>Clock latency</li></a>
+<li>Clock problems </li></a>
+<li>Main concerns for Clock design </li></a>
+<li>Clock Skew  </li></a>
+<li>Clock Jitter</li></a>
+<li>CTS Pre requisites</li></a>
+<li>CTS Objects</li></a>
+<li>CTS Flow</li></a>
+<li>Clock Tree Reference</li></a>
+<li>Clock Tree Exceptions</li></a>
+<li>CTS Algorithm</li></a>
+<li>Analyze the Clock tree</li></a>
+<li>Post CTS Optimization</li></a>
+<li>CTS Outputs</li></ul>
+<center><a class="btn btn-danger" href="cts.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="headingsix">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsesix" aria-expanded="false" aria-controls="collapseFour">
+          Routing
+        </a>
+      </h4>
+        </div>
+        <div id="collapsesix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingsix">
+          <div class="panel-body"><ul class="bullets">
+<li>Importance of Routing as Technology Shrinks</li>
+<li>Routing Objectives</li>
+<li>Routing</li>
+<li>Routing Inputs</li>
+<li>Routing Goals</li>
+<li>Routing constraints</li>
+<li>Routing Flow</li>
+<li>Trial/Global Routing</li>
+<li>Track Assignment</li>
+<li>Detail/Nano Routing</li>
+<li>Grid based Routing</li>
+<li>Routing Preferences</li>
+<li>Post Routing Optimization </li>
+<li>Filler Cell Insertion</li>
+<li>Metal Fill</li>
+<li>Spare Cells Tie-up/ Tie-down</li></ul>
+<center><a class="btn btn-danger" href="routing.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="headingseven">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseseven" aria-expanded="false" aria-controls="collapseFour">
+          STA
+        </a>
+      </h4>
+        </div>
+        <div id="collapseseven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingseven">
+          <div class="panel-body"><ul class="bullets">
+<li>Diff b/w DTA & STA</li>
+<li>Static Timing Analysis</li>
+<li>main steps in STA</li>
+<li>STA(input & output)</li>
+<li>Timing Report</li>
+<li>Clocked storage elements</li>
+<li>Delays </li>
+<li>Pins related to clock </li>
+<li>Timing Arc</li>
+<li>Timing Unate</li>
+<li>Clock definitions in STA</li>
+<li>Timing Paths </li>
+<li>Timing Path Groups </li>
+<li>Clock Latency </li>
+<li>Insertion Delay </li>
+<li>Clock Uncertainty</li>
+<li>Clock Skew </li>
+<li>Clock Jitter </li>
+<li>Glitch</li>
+<li>Pulse width</li>
+<li>Duty Cycle </li>
+<li>Transition/Slew</li>
+<li>Asynchronous Path</li>
+<li>Critical Path</li>
+<li>Shortest Path </li>
+<li>Clock Gating Path</li>
+<li>Launch path </li>
+<li>Arrival Path </li>
+<li>Required Time</li>
+<li>Common Path Pessimism(CPP/CRPR)</li>
+<li>Slack </li>
+<li>Setup and Hold time</li>
+<li>Setup & hold time violations</li>
+<li>Recovery Time</li>
+<li>Removal Time </li>
+<li>Recovery & Removal time violations</li>
+<li>Single Cycle path </li>
+<li>Multi Cycle Path </li>
+<li>Half Cycle Path</li>
+<li>False Path</li>
+<li>Clock Domain Crossing(CDC) </li>
+<li>Clock Domain Synchronization Scheme</li>
+<li>Bottleneck Analysis</li>
+<li>Multi-VT Cells(HVT LVT SVT)</li>
+<li>Time Borrowing/Stealing</li>
+<li>Types of STA (PBA GBA)</li>
+<li>Diff b/w PBA & GBA </li>
+<li>Block based STA & Path based STA</li></ul>
+<center><a class="btn btn-danger" href="sta.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+<br>
+
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="heading10">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false" aria-controls="collapseFour">
+          Congestion Analysis
+        </a>
+      </h4>
+        </div>
+        <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
+          <div class="panel-body"><ul class="bullets">
+<li>Congestion Analysis</li>
+<li>Routing Congestion Analysis</li>
+<li>Placement Cong. Analysis</li>
+<li>Routing Congestion causes</li>
+<li>Congestion Fixes</li>
+<li>Global & local cong.</li>
+<li>Congestion Profiles</li></ul>
+<center><a class="btn btn-danger" href="congestion_analysis.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="heading11">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false" aria-controls="collapseFour">
+          Power Analysis
+        </a>
+      </h4>
+        </div>
+        <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
+          <div class="panel-body"><ul class="bullets">
+<li>Power Analysis</li>
+<li>Leakeage Power</li>
+<li>Switching Power</li>
+<li>Short Circuit</li>
+<li>Leakage/static Power </li>
+<li>Static power Dissipation</li>
+<li>Types of Static Leakage</li>
+<li>Static Power Reduction Techniques </li>
+<li>Dynamic/Switching Power </li>
+<li>Dynamic Power calculation depends on </li>
+<li>Types of Dynamic Power </li>
+<li>Dynamic Power Reduction Techniques </li></ul>
+<center><a class="btn btn-danger" href="power_analysis.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="heading12">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapseFour">
+          IR Analysis
+        </a>
+      </h4>
+        </div>
+        <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
+          <div class="panel-body"><ul class="bullets">
+<li>IR Drop Analysis</li>
+<li>Types of IR Drop & their methodologies </li>
+<li>IR Drop Reasons </li>
+<li>IR Drop Robustness Checks </li>
+<li>IR Drop Impacts </li>
+<li>IR Drop Remedies </li>
+<li>Ldi/dt Effects </li></ul>
+<center><a class="btn btn-danger" href="ir_analysis.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+ </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+<br>
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="heading13">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse13" aria-expanded="false" aria-controls="collapseFour">
+          Issues in PD
+        </a>
+      </h4>
+        </div>
+        <div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13">
+          <div class="panel-body"><ul class="bullets">
+<li>Design Parasitics</li>
+<li>Latch-Up </li>
+<li>Electrostatic Discharge(ESD) </li>
+<li>Electromigration </li>
+<li>Antenna Effect </li>
+<li>Crosstalk </li>
+<li>Soft Errors </li>
+<li>Sef Heating </li>
+</ul>
+<center><a class="btn btn-danger" href="pd_issues.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+    </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading14">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse14" aria-expanded="false" aria-controls="collapseFour">
+          Cells in PD
+        </a>
+      </h4>
+        </div>
+        <div id="collapse14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading14">
+          <div class="panel-body"><ul class="bullets">
+<li>Cells in PD</li>
+<li>Standard Cells </li>
+<li>ICG Cells </li>
+<li>Well Taps </li>
+<li>End Caps </li>
+<li>Filler Cells </li>
+<li>Decap Cells </li>
+<li>ESD Clamp </li>
+<li>Spare Cells</li>
+<li>Tie Cells</li>
+<li>Delay Cells</li>
+<li>Metrology Cells </li></ul>
+<center><a class="btn btn-danger" href="pd_cells.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading15">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse15" aria-expanded="false" aria-controls="collapseFour">
+          IO Design
+        </a>
+      </h4>
+        </div>
+        <div id="collapse15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading15">
+          <div class="panel-body"><ul class="bullets">
+<li>IO Pads</li>
+<li>Types of IO Pads</li>
+      </ul>
+<center><a class="btn btn-danger" href="io_design.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+
+  </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading16">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse16" aria-expanded="false" aria-controls="collapseFour">
+          Delay Models
+        </a>
+      </h4>
+        </div>
+        <div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading16">
+          <div class="panel-body"><ul class="bullets">
+<li>Delay Calculation</li>
+<li>Delay Models</li>
+<li>Interconnect Delay Models<br> </li>
+<li>Cell Delay Models</li>   </ul>     
+<center><a class="btn btn-danger" href="delay_models.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+  
+</div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading17">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse17" aria-expanded="false" aria-controls="collapseFour">
+          ECO
+        </a>
+      </h4>
+        </div>
+        <div id="collapse17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading17">
+          <div class="panel-body"><ul class="bullets">
+<li>Engineering Change Order</li>
+<li>Post Synthesis ECO </li>
+<li>Post Route ECO </li>
+<li>Post Silicon ECO </li>
+<li>Metal Layer ECO Example </li></ul>
+<center><a class="btn btn-danger" href="eco.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading18">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse18" aria-expanded="false" aria-controls="collapseFour">
+          Types of Std cells
+        </a>
+      </h4>
+        </div>
+        <div id="collapse18" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading18">
+          <div class="panel-body"><ul class="bullets">
+<li>std cell library types</li></a>
+<li>Classification wrt density and Vth </li> </ul>
+<center><a class="btn btn-danger" href="std_cell_types.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+         </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+<br>
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading19">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse19" aria-expanded="false" aria-controls="collapseFour">
+          DFM/DFY
+        </a>
+      </h4>
+        </div>
+        <div id="collapse19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading19">
+          <div class="panel-body"><ul class="bullets">
+<li>The Discontinuity</li>
+<li>Discontinuity: Classification</li>
+<li>DFM/DFY </li>
+<li>Yield Classification </li>
+<li>Why DFM/DFY? </li>
+<li>DFM/DFY Solution </li>
+<li>Wire Spreading</li>
+<li>metal Fill</li>
+<li>CAA</li>
+<li>CMP Aware-Design</li>
+<li>Redundant Via</li>
+<li>RET</li>
+<li>Litho Process Check(LPC)</li>
+<li>Layout Dependent Effects </li>
+<li>Resolution Enhancement Techniques </li>
+<li>Types of RET</li>
+<li>Optical Proximity Correction(OPC)</li>
+<li>Scattering Bars</li>
+<li>Multiple Patterning</li>
+<li>Phase-shift Masking </li>
+<li>Off-Axis Illumination</li></ul>
+<center><a class="btn btn-danger" href="dfm_dfy.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading20">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse20" aria-expanded="false" aria-controls="collapseFour">
+          MC/MM/OCV
+        </a>
+      </h4>
+        </div>
+        <div id="collapse20" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading20">
+          <div class="panel-body"><ul class="bullets">
+<li>Corners</li>
+<li>Need for corner analysis</li>
+<li>PVT Variations </li>
+<li>Corner Analysis</li>
+<li>PVT/RC Corners</li>
+<li>Temperature Inversion</li>
+<li>Cross Corner Analysis</li>
+<li>Modes of Analysis</li>
+<li>MC/MM Analysis</li>
+<li>OCV</li>
+<li>Derating</li>
+<li>OCV Timing Checks</li>
+<li>OCV Enhancements</li>
+<li>AOCV </li>
+<li>SSTA</li>
+<li>CRPR/CPPR</li></ul>
+          <center><a class="btn btn-danger" href="mc_mm_ocv.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+		  </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	 
+
+    </div>
+    <!-- end of #accordion -->
+
+
+
+
+<div class="panel panel-default col-sm-14">
+<div class="emptyBlocks"></div>
+    <div class="panel-body"><div class="sidebar">
+<div class="mobileShow"> <center>
+
+</div></center><br>
+    
+<div class="mobileHide">
+<center>
+</center></div>
+</div></div></div>
+
+
+
+
+  </div>
+  <!-- end of wrap -->
+
+
+<style>
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: grey;
+  border-width: 1px;
+} 
+</style>
+
+
+
+
+
+
+<!-- end of container -->
+
+  </div>
+	 <!--/social-box-->
+          </div> 	  
+		  
+		  
+		  
+		  
+		  
+
+		
+            	  <div class="row">
+  <div class="panel panel-default col-sm-14">
+<div class="emptyBlocks"></div>
+
+    <style>
+body {
+  margin: 0;
+  font-family: 'Roboto';
+  font-size: 14px;
+  background: #455A64;
+}
+
+
+
+.container {
+  max-width: 970px;
+}
+
+
+.wrap {
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 2, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 0px;
+}
+
+a:focus,
+a:hover,
+a:active {
+  outline: 1;
+  text-decoration: black;
+}
+
+.panel {
+  border-width: 0 0 4px 0;
+  border-style: solid;
+  border-color: #696969;
+  background: none;
+  box-shadow: black;
+}
+
+.panel:last-child {
+  border-bottom: none;
+}
+
+.panel-group > .panel:first-child .panel-heading {
+  border-radius: 0px 0px 0 0;
+}
+
+.panel-group .panel {
+  border-radius: 0;
+}
+
+.panel-group .panel + .panel {
+  margin-top: 0;
+}
+
+.panel-heading {
+  background-color: #black;
+  border-radius: 0;
+  border: none;
+  color: #000000;
+  padding: 0;
+}
+
+.panel-title a {
+  display: block;
+  color: #000000;
+  padding: 0px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.panel-body {
+  background: #fff;
+}
+
+.panel:last-child .panel-body {
+  border-radius: 1 0 px px;
+}
+
+.panel:last-child .panel-heading {
+  border-radius: 0 0 4px 4px;
+  transition: border-radius 0.3s linear 0.2s;
+}
+
+.panel:last-child .panel-heading.active {
+  border-radius: 0;
+  transition: border-radius linear 0s;
+}
+/* #bs-collapse icon scale option */
+
+.panel-heading a:before {
+  position: absolute;
+  font-family: 'Material Icons';
+  right: px;
+  top: 0px;
+  font-size: 24px;
+  transition: all 0.5s;
+  transform: scale(1);
+}
+
+.panel-heading.active a:before {
+  content: ' ';
+  transition: all 0.9s;
+  transform: scale(0);
+}
+
+#bs-collapse .panel-heading a:after {
+  content: ' ';
+  font-size: 24px;
+  position: absolute;
+  font-family: 'Material Icons';
+  right: 5px;
+  top: 10px;
+  transform: scale(0);
+  transition: all 0.5s;
+}
+
+#bs-collapse .panel-heading.active a:after {
+  content: '\e909';
+  transform: scale(1);
+  transition: all 0.5s;
+}
+/* #accordion rotate icon option */
+
+#accordion .panel-heading a:before {
+  content: '\e316';
+  font-size: 24px;
+  position: absolute;
+  font-family: 'Material Icons';
+  right: 5px;
+  top: 10px;
+  transform: rotate(180deg);
+  transition: all 0.5s;
+}
+
+#accordion .panel-heading.active a:before {
+  transform: rotate(0deg);
+  transition: all 0.5s;
+}
+	</style>
+ 
+
+   
+   
+
+
+
+<script>
+$(document).ready(function() {
+  $('.collapse.in').prev('.panel-heading').addClass('active');
+  $('#accordion, #bs-collapse')
+    .on('show.bs.collapse', function(a) {
+      $(a.target).prev('.panel-heading').addClass('active');
+    })
+    .on('hide.bs.collapse', function(a) {
+      $(a.target).prev('.panel-heading').removeClass('active');
+    });
+});
+</script>
+				
+				
+				
+				
+    </div>
+  </div>
+</div>
+  </div>
+	 <!--/social-box-->
+          </div> 
+		  
+		  
+		  
+		  
+		  
+	
+		  
+		
+
+          <!--/col-->
+
+        </div>
+
+
+
+
+        <!-- statics end -->
+
+
+
+
+        <!-- project team & activity start -->
+        <div class="row">
+          <div class="col-md- portlets">
+            <!-- Widget -->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                
+				<div class="container">
+                
+        
+</div>
+	
+	 
+	  <div class="text-center">
+       
+          <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
+          -->
+          
+		 <center>
+
+
+
+Copyright © 2021 <BR>
+
+<div class="footer-wrapper">
+                        
+                       
+                        <a class="footer-icon linkedin" href="https://www.linkedin.com/in/ferozchoudhary/" target="_blank">
+                           <svg style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" width="35px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#0072FF">
+                              <g>
+                                 <path d="M8,54.7C8,55.4,8.6,56,9.3,56h9.3c0.7,0,1.3-0.6,1.3-1.3V23.9c0-0.7-0.6-1.3-1.3-1.3H9.3   c-0.7,0-1.3,0.6-1.3,1.3V54.7z"/>
+                                 <path d="M46.6,22.3c-4.5,0-7.7,1.8-9.4,3.7c-0.4,0.4-1.1,0.1-1.1-0.5l0-1.6c0-0.7-0.6-1.3-1.3-1.3h-9.4   c-0.7,0-1.3,0.6-1.3,1.3c0.1,5.7,0,25.4,0,30.7c0,0.7,0.6,1.3,1.3,1.3h9.5c0.7,0,1.3-0.6,1.3-1.3V37.9c0-1,0-2,0.3-2.7c0.8-2,2.6-4.1,5.7-4.1c4.1,0,6,3.1,6,7.6v15.9c0,0.7,0.6,1.3,1.3,1.3h9.3c0.7,0,1.3-0.6,1.3-1.3V37.4C60,27.1,54.1,22.3,46.6,22.3z"/>
+                                 <path d="M13.9,18.9L13.9,18.9c3.8,0,6.1-2.4,6.1-5.4C19.9,10.3,17.7,8,14,8c-3.7,0-6,2.3-6,5.4   C8,16.5,10.3,18.9,13.9,18.9z"/>
+                              </g>
+                           </svg>
+                        </a>
+                        <a class="footer-icon youtube" href="https://youtube.com/c/FerozAhmed_PhysicalDesign?sub_confirmation=1" target="_blank">
+                           <svg width="35px" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <g>
+                                 <path d="M31.67,9.179c0,0-0.312-2.353-1.271-3.389c-1.217-1.358-2.58-1.366-3.205-1.443C22.717,4,16.002,4,16.002,4   h-0.015c0,0-6.715,0-11.191,0.347C4.171,4.424,2.809,4.432,1.591,5.79C0.633,6.826,0.32,9.179,0.32,9.179S0,11.94,0,14.701v2.588   c0,2.763,0.32,5.523,0.32,5.523s0.312,2.352,1.271,3.386c1.218,1.358,2.815,1.317,3.527,1.459C7.677,27.919,15.995,28,15.995,28   s6.722-0.012,11.199-0.355c0.625-0.08,1.988-0.088,3.205-1.446c0.958-1.034,1.271-3.386,1.271-3.386s0.32-2.761,0.32-5.523v-2.588   C31.99,11.94,31.67,9.179,31.67,9.179z" fill="#E02F2F"/>
+                                 <polygon fill="#FFFFFF" points="12,10 12,22 22,16"/>
+                              </g>
+                           </svg>
+                        </a>
+						<a class="footer-icon facebook" href="https://www.facebook.com/zoref5619" target="_blank">
+                           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="35px"
+                              viewBox="0 0 512 512" fill="#385C8E" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                              <g>
+                                 <path d="M134.941,272.691h56.123v231.051c0,4.562,3.696,8.258,8.258,8.258h95.159c4.562,0,8.258-3.696,8.258-8.258V273.78h64.519c4.195,0,7.725-3.148,8.204-7.315l9.799-85.061c0.269-2.34-0.472-4.684-2.038-6.44c-1.567-1.757-3.81-2.763-6.164-2.763h-74.316V118.88c0-16.073,8.654-24.224,25.726-24.224c2.433,0,48.59,0,48.59,0c4.562,0,8.258-3.698,8.258-8.258V8.319c0-4.562-3.696-8.258-8.258-8.258h-66.965C309.622,0.038,308.573,0,307.027,0c-11.619,0-52.006,2.281-83.909,31.63c-35.348,32.524-30.434,71.465-29.26,78.217v62.352h-58.918c-4.562,0-8.258,3.696-8.258,8.258v83.975C126.683,268.993,130.379,272.691,134.941,272.691z"/>
+                              </g>
+                           </svg>
+                        </a>
+                        <a class="footer-icon instagram" href="https://www.instagram.com/rising_legend/" target="_blank">
+                           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="35px"
+                              viewBox="0 0 551.034 551.034" xml:space="preserve">
+                              <g>
+                                 <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="275.517" y1="4.57" x2="275.517" y2="549.72" gradientTransform="matrix(1 0 0 -1 0 554)">
+                                 <stop  offset="0" style="stop-color:#E09B3D"/>
+                                 <stop  offset="0.3" style="stop-color:#C74C4D"/>
+                                 <stop  offset="0.6" style="stop-color:#C21975"/>
+                                 <stop  offset="1" style="stop-color:#7024C4"/>
+                              </linearGradient>
+                              <path class="insta-square" style="fill:url(#SVGID_1_);" d="M386.878,0H164.156C73.64,0,0,73.64,0,164.156v222.722
+                                 c0,90.516,73.64,164.156,164.156,164.156h222.722c90.516,0,164.156-73.64,164.156-164.156V164.156
+                                 C551.033,73.64,477.393,0,386.878,0z M495.6,386.878c0,60.045-48.677,108.722-108.722,108.722H164.156
+                                 c-60.045,0-108.722-48.677-108.722-108.722V164.156c0-60.046,48.677-108.722,108.722-108.722h222.722
+                                 c60.045,0,108.722,48.676,108.722,108.722L495.6,386.878L495.6,386.878z"/>
+                              
+                                 <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="275.517" y1="4.57" x2="275.517" y2="549.72" gradientTransform="matrix(1 0 0 -1 0 554)">
+                                 <stop  offset="0" style="stop-color:#E09B3D"/>
+                                 <stop  offset="0.3" style="stop-color:#C74C4D"/>
+                                 <stop  offset="0.6" style="stop-color:#C21975"/>
+                                 <stop  offset="1" style="stop-color:#7024C4"/>
+                              </linearGradient>
+                              <path style="fill:url(#SVGID_2_);" d="M275.517,133C196.933,133,133,196.933,133,275.516s63.933,142.517,142.517,142.517
+                                 S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6c-48.095,0-87.083-38.988-87.083-87.083
+                                 s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083C362.6,323.611,323.611,362.6,275.517,362.6z"/>
+                              
+                              <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="418.31" y1="4.57" x2="418.31" y2="549.72" gradientTransform="matrix(1 0 0 -1 0 554)">
+                                 <stop  offset="0" style="stop-color:#E09B3D"/>
+                                 <stop  offset="0.3" style="stop-color:#C74C4D"/>
+                                 <stop  offset="0.6" style="stop-color:#C21975"/>
+                                 <stop  offset="1" style="stop-color:#7024C4"/>
+                              </linearGradient>
+                                 <circle style="fill:url(#SVGID_3_);" cx="418.31" cy="134.07" r="34.15"/>
+                              </g>
+                           </svg>
+                        </a>
+                     </div>
+
+</div>
+
+  </div>
+	<center>	<img src="images/footer.jpg"><br>	</center><br>
+<style>
+body{
+  background:#eee;
+  
+}
+.main{
+  display:flex;
+  margin-top:10px;
+  align-items:right;
+  justify-content:right;
+}
+.footer-wrapper .footer-icon,
+.footer-wrapper .footer-icon:visited {
+  display: inline-block;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  line-height: 60px;
+  margin: 0 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 28%;
+  box-shadow: 0 5px 15px -5px rgba(0,0,0,0.3);
+  opacity: 0.99;
+}
+.footer-wrapper .footer-icon:before {
+  content: '';
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.footer-wrapper .footer-icon,
+.footer-wrapper .footer-icon:before,
+.footer-wrapper .footer-icon svg{
+  transition: all 0.35s;
+  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  outline: 0;
+}
+.footer-wrapper .footer-icon:before {
+  top: 90%;
+  left: -110%;
+}
+.footer-wrapper .footer-icon:focus,
+.footer-wrapper .footer-icon:hover{
+    background-color: transparent;
+}
+.footer-wrapper .footer-icon svg{
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  height: 30px;
+  margin: auto;
+  font-size: 0;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.footer-wrapper .footer-icon.facebook:before {
+  background-color: #3b5998;
+}
+
+
+.footer-wrapper .footer-icon.telegram:before {
+  background-color: #3cf;
+}
+.footer-wrapper .footer-icon.google:before {
+  background-color: #dc4a38;
+}
+.footer-wrapper .footer-icon.linkedin:before{
+  background-color: #0072FF;
+}
+.footer-wrapper .footer-icon.youtube:before {
+  background-color: #E02F2F;
+}
+.footer-wrapper .footer-icon.youtube:hover svg g path,
+.footer-wrapper .footer-icon.youtube:focus svg g path {
+  fill:#fff;
+}
+.footer-wrapper .footer-icon.youtube:hover svg g polygon,
+.footer-wrapper .footer-icon.youtube:focus svg g polygon {
+  fill:#E02F2F;
+}
+
+.footer-wrapper .footer-icon.instagram:before {
+    background-color: #C21975;
+}
+/* .footer-wrapper .footer-icon.instagram:hover svg,
+.footer-wrapper .footer-icon.instagram:focus svg {
+  filter: invert(200%) sepia(50%) saturate(1) hue-rotate(100deg) brightness(100%) 
+ fill : #FFF;
+}*/
+.footer-icon.instagram:hover svg{
+	fill : #FFF;
+}
+
+.footer-wrapper .footer-icon:focus:before,
+.footer-wrapper .footer-icon:hover:before {
+  top: -10%;
+  left: -10%;
+}
+.footer-wrapper .footer-icon:focus svg,
+.footer-wrapper .footer-icon:hover svg 
+{
+  fill:#fff;
+  color: #fff;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+</style>		
+				</div>
+                <div class="widget-icons pull-right">
+               
+                </div>
+                <div class="clearfix"></div>
+              </div>
+
+              
+        <!-- project team & activity end -->
+
+
+      </section>
+     
+		 
+		 </a></center>
+        
+      </div>
+    </section>
+    <!--main content end-->
+  </section>
+  <!-- container section start -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+	<!-- /Services section -->
+	
+	
+	
+	<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 38px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  padding: 0px;
+  border-radius: 8px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+</style>
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">&#x1F51D;</button>
+	<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+	
+	
+	
+	
+	
+		
+	
+	
+	
+
+
+			  
+					  
+					  
+					  
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+          </div>
+          
+
+      </section>
+     
+	
+	
+	 
+	 
+    </section>
+    <!--main content end-->
+  </section>
+  <!-- container section start -->
+
+  <!-- javascripts -->
+
+
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <!-- bootstrap -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- nice scroll -->
+  <script src="js/jquery.scrollTo.min.js"></script>
+  <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+  <!-- charts scripts -->
+ 
+  
+    <!--custome script for all page-->
+    <script src="js/scripts.js"></script>
+    <!-- custom script for this page-->
+
+    <script src="js/jquery.slimscroll.min.js"></script>
+   
+	
+	
+
+</body>
+
+</html>

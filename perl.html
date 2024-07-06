@@ -1,0 +1,2857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Perl scripting is  a robust scripting language which is used in various fields. Perl is good at obtaining Regular expressions and in all the fields of application it is unique. Perl is a scripting language which is based on interpreter but not on the languages based on compiler. In all the applications, optimization is used">
+  <meta name="author" content="vlsi backend adventure">
+  <meta name="keyword" content="learning perl, perl interview question answer, perl interview questions">
+  <link rel="shortcut icon" href="img/icon.png" alt="VLSI Back-End adventure">
+  <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+
+
+<style>
+      .unselectable {
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color: #000000;
+      }
+    </style>
+
+   <style>
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      div {
+        border: 0px dotted #000000;
+      }
+      .portrait {
+        height: 100%;
+        width: 40px;
+      }
+      .landscape {
+        height: 100%;
+        width: 80px;
+      }
+      .square {
+        height: 100%;
+        width: 100px;
+      }
+    </style>
+	<style type="text/css">
+.mobileShow {display: none;}
+
+/* Smartphone Portrait and Landscape */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px){ 
+.mobileShow {display: inline;}
+}
+.mobileHide { display: inline; }
+
+/* Smartphone Portrait and Landscape */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px){
+.mobileHide { display: none;}
+}
+</style>
+
+  <title>Perl Q&A | VLSI Back-End Adventure</title>
+
+   <!-- Bootstrap CSS -->
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <link href="css/elegant-icons-style.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet" />
+  <!-- =======================================================
+    Theme Name: Feroz Ahmed
+    Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+
+
+
+
+  <!-- container section start -->
+  <section id="container" class="" >
+
+
+    <header class="header dark-bg" class="nav" style="position:fixed;" "top:0px;>
+      <div class="toggle-nav" ">
+        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+      </div>
+
+      <!--logo start-->
+      <a href="index.html" class="logo">VLSI <span class="lite">Back-End </span>Adventure</a>
+      <!--logo end-->
+
+      <div class="nav search-row" id="top_menu">
+        <!--  search form start -->
+        <ul class="nav top-menu">
+          <li>
+            <form class="navbar-form">
+              <input class="form-control" placeholder="Search" type="text">
+            </form>
+          </li>
+        </ul>
+        <!--  search form end -->
+      </div>
+      
+        <style>.goog-logo-link {   display:none !important; } .goog-te-gadget{ color: transparent !important;} </style>
+<div style="position:absolute; left:1000px;">   <div class="nav search-row" id="top_menu">
+<div id="google_translate_element"> </div>
+<script type="text/javascript">function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');}</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</div></div>
+      
+
+      <div class="top-nav notification-row">
+        <!-- notificatoin dropdown start-->
+        <ul class="nav pull-right top-menu">
+
+          <!-- task notificatoin start -->
+        
+            <ul class="dropdown-menu extended tasks-bar">
+              <div class="notify-arrow notify-arrow-blue"></div>
+            </ul>
+          
+         
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="">
+                            <span class="profile-ava">
+                                <img  src="img/feroz.jpg">
+                            </span>
+                            <span class="username">Feroz Ahmed</span>
+                            <b class="caret"></b>
+                        </a>
+            <ul class="dropdown-menu extended logout">
+              <div class="log-arrow-up"></div>
+              <li class="eborder-top">
+                   <a href="https://www.linkedin.com/in/ferozchoudhary/"><i class="fa fa-linkedin"> </i> My LinkedIn Profile</a>
+              </li>
+              <li>
+                <a href="https://youtube.com/c/FerozAhmed_PhysicalDesign?sub_confirmation=1"><i class="fa fa-youtube"> </i>Youtube Channel</a>				
+              </li>
+			  <li>
+                <a href="http://t.me/VLSI_Learning"><i class="fa fa-telegram"> </i> Telegram</a>
+              </li>
+			   <li>
+                <a href="https://github.com/ferozer"><i class="fa fa-github"> </i> Github</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/rising_legend/"><i class="fa fa-instagram"> </i> Instagram</a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/zoref5619"><i class="fa fa-facebook"> </i> Facebook</a>
+              </li>
+              
+             
+              <li>
+              
+              </li>
+            </ul>
+          </li>
+      </div>
+	  
+    </header>
+    <!--header end-->
+
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse " style="position:fixed;" "top:0px;>
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu">
+          <li class="active">
+            <a class="" href="index.html">
+                          <i class="icon_house_alt"></i>
+                          <span>Home</span>
+                      </a>
+          </li>
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Physical Design</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="logic_synthesis.html">Logic Synthesis</a></li>
+              <li><a class="" href="pd_inputs.html">PD Inputs</a></li>
+			   <li><a class="" href="floorplan.html">Floorplan</a></li>
+              <li><a class="" href="powerplan.html">Powerplan</a></li>
+			   <li><a class="" href="placement.html">Placement</a></li>
+              <li><a class="" href="cts.html">Clock Tree Synthesis</a></li>
+			  <li><a class="" href="routing.html">Routing</a></li>
+              <li><a class="" href="sta.html">Static Timing Analysis</a></li>
+            </ul>
+          </li>
+		  
+		  <li>
+		   <a class="" href="pd_verification.html">
+                       <i class="icon_document_alt"></i>
+                          <span>PD Verification</span>
+                      </a></li>
+		  
+		  <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>PD Analysis</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="congestion_analysis.html">Congestion Analysis</a></li>
+              <li><a class="" href="power_analysis.html">Power Analysis</a></li>
+			   <li><a class="" href="ir_analysis.html">IR Analysis</a></li>
+            </ul>
+          </li>
+		  
+		  <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>PD Essentials</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="pd_issues.html">Issues in PD</a></li>
+              <li><a class="" href="pd_cells.html">Cells in PD</a></li>
+			   <li><a class="" href="io_design.html">IO Design</a></li>
+			     <li><a class="" href="delay_models.html">Delay Models</a></li>
+              <li><a class="" href="eco.html">ECO</a></li>
+			   <li><a class="" href="std_cell_types.html">Types of Std Cells</a></li>
+            </ul>
+          </li>
+		  
+		  
+		   <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Discontinuity</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="dfm_dfy.html">DFM/DFY</a></li>
+              <li><a class="" href="mc_mm_ocv.html">MC/MM/OCV</a></li>
+            </ul>
+          </li>
+		  
+		  <li>
+		   <a class="" href="videos.html">
+                       <i class="icon_desktop"></i>
+                          <span>Videos</span>
+                      </a></li>
+		<li>  <a class="" href="sta_numericals.html">
+                       <i class="icon_table"></i>
+                          <span>STA Numericals</span>
+                      </a>
+					  </li>
+		  
+		  
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_piechart"></i>
+                          <span>Q&A</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="pd_mcqs.html">PD MCQs</a></li>
+              <li><a class="" href="pd_qa.html">Physical Design</a></li>
+              <li><a class="" href="digital_electronics.html">Digital Electronics</a></li>
+			  <li><a class="" href="cmos_fundamentals.html">CMOS Fundamentals</a></li>
+			  <li><a class="" href="verilog.html">Verilog</a></li>
+              <li><a class="" href="tcl.html">TCL Scripting</a></li>
+              <li><a class="" href="perl.html">PERL Scripting</a></li>
+            </ul>
+          </li>
+          <li>
+		   <a class="" href="Extras.html">
+                       <i class="icon_document_alt"></i>
+                          <span>Extras</span>
+                      </a></li>
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+    <!--sidebar end-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+	  
+        <!--overview start-->
+        <div class="row">
+          <div class="col-lg-12">
+           
+            <ol class="breadcrumb">
+              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+			  <li><i class="fa fa-document"></i><a href="#">Perl Q&A </a></li>
+            </ol>
+          </div>
+        </div>
+
+        
+          <!--/.col-->
+
+        </div>
+        <!--/.row-->
+
+
+       
+<!-- Services section -->
+
+	
+<div class="unselectable">
+
+
+
+
+
+
+
+
+
+
+<div>
+
+<div style="background-image: url('img/1231.jpg'); background-attachment:fixed;">
+
+</head>
+<body>
+
+
+
+
+
+
+
+<!-- Today status end -->
+
+<a name="1"></a>
+
+        <div class="row">
+		
+		
+
+		<!--/col-->
+		 
+           
+
+          <div class="col-lg-10 col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-heading" style="position:sticky; 
+		  top:60px;">
+		  <h2><a name="1"></a><a name="1"></a>
+                <i class="fa fa-flag-o red"></i><h2><b><a name="1"></a>Perl Q&A </h2></b>
+				
+                
+				
+              </div>
+              <div class="panel-body">
+                <table class="table bootstrap-datatable countries">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+				  
+				  
+			
+
+<style>
+			 .bullets {
+			 }
+			 .bullets li {
+			 list-style-type: square;
+			 )
+			</style>
+
+
+
+
+
+<h2> <a name="1"></a>Perl Q&A</h2>
+<hr>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+<p> 1. Define Perl Scripting?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+In the IT market, Perl scripting is considered as a robust scripting language which is used in various fields. Perl is good at obtaining Regular expressions and in all the fields of application it is unique. Perl is a scripting language which is based on interpreter but not on the languages based on compiler. In all the applications, optimization is used.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 2. Why To Use Perl Scripting?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Perl scripting is mainly used in functional concepts as well as regular expressions, you can also design own policies to obtain generalized pattern using regular expression. Perl is compatible or supports more than 76 operating systems and 3000 modules and it is known as Comprehensive Perl Archive Network modules.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 3. What Is Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Perl is a programming language which is based on shell, C, Lisp, etc. In general, Perl is mainly used for network operations, OS program and for developing some websites.
+</div></div></div><br>
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 4. Why To Use Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+• It is a powerful interpreter for free.<br>
+• Perl is flexible and portable. It is very easy to learn Perl language.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 5. Why Do You Create An Application For Real Time System In Which Processing Speed Is Vital?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Perl is used in the following cases:<br>
+• To process large text<br>
+• When data manipulation is done by application<br>
+• If you require fast developments expand to become libraries<br>
+• To load database operations
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 6. Which Is Your Favorite Module And Why It Is?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+CGI.pm is my favorite module and it handles several tasks such as printing the headers, parsing the form input and it handles sessions and cookies effectively.
+</div></div></div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 7. How Perl Warnings Are Turn On And Why Is It Important?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+In general, Perl excuse strange and also wrong code sometimes. Thus, the time spent for searching weird results and bugs in very high. You can identify common mistakes and strange places in the code easily when warnings are turned on. In the long run, the time required for debugging is saved a lot. There are numerous ways to turn on the warnings of Perl:
+<br><br>
+-w option is used on the command line for Perl one-liner<br>
+-w option on shebang line is used on windows or UNIX. Windows Perl interpreter do not require it.<br>
+For other systems, compiler documentation is checked or compiler warnings are selected.
+</div></div></div><br>
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 8. Differentiate Use And Require?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+<b>Use:</b>
+<br>
+This method is used for modules.<br>
+The objects which are included are varied at compilation time.<br>
+You need not give a file extension.<br><br>
+<b>Require:<br></b>
+
+This method is used for both modules and libraries.
+The objects are included are verified at run time.
+You need not give file extension.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 9. Distinguish My And Local?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+The variables which are declared using “my” lives only in that particular block ion which they are declared and inherited functions do not have a visibility that are called in that block. The variables which are defined as “local” are visible in that block and they have a visibility in functions which are called in that particular block.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 10. Why Perl Patterns Are Not Regular Expressions?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Perl patterns have back references<br>
+By the definition, a regular expression should determine next state infinite automation without extra money to keep in previous state. State machine is required by the pattern / ([ab] +) c1/ to remember old states. Such patterns are disqualified as being regular expressions in the term’s classic sense.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 11. What Happens If A Reference Is Returned To Private Variable?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+Your variables are kept on track by the Perl, whether dynamic or else, and does not free things before you use them.
+</div></div></div><br>
+
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 12. Define Scalar Data And Variables?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+The concept of data types is flexible, which is present in Perl. Scalar is a single thing such as a string or a number. The java concepts such as int, float, string, and double are similar to scalar concept of Perl. Strings and numbers are exchangeable. Scalar variable is nothing but a Perl variable which is used to store scalar data. A dollar sign $ is used by it which is followed by underscores or alphanumeric characters. It is a case sensitive.
+</div></div></div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 13. Why -w Argument Is Used With Perl Programs?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+-w option of the interpreter is used by most of the Perl developers especially in the development stage of an application. It is warning option to turn on multiple warning messages that are useful in understanding and debugging the application.
+ </div></div></div><br>
+
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 14. Which Has Highest Precedence In Between List And Terms? Explain?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+In Perl, the highest precedence is for Perl. Quotes, variables, expressions in parenthesis are included in the Terms. The same level of precedence as Terms is for List operators. Especially, these operators have strong left word precedence.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 15. Define A Short Circuit Operator?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+
+The C-style operator ll carries out logical operation which is used to tie logical clauses, overall value of true is returned if either clause is true. This operator is known as short-circuit operator because you need not check or evaluate right operand if the left operand is true.
+ </div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 16. In Perl, Name Different Forms Of Goto And Explain?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+In Perl, there are three different forms for goto, they are:<br>
+• goto name<br>
+• goto label<br>
+• goto expr<br>
+goto name is used along with subroutines, it is used only when it is required as it creates destruction in programs. It is the second form of label where Execution is transferred to a statement labeled LABEL using goto LABEL. The last label form is goto EXPR which expects EXPR to evaluate label.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 17. Can You Add Two Arrays Together?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Yes, it is possible to add two arrays together with a push function. A value or values to end of the array is added using push function. The values of list are pushed on to the end of an array using push function. Length of list is used to increase length of an array.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 18. How Shift Command Is Used?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+The first value of an array shifted using shift array function and it is returned, which results in array shortening by one element and moves everything from a place to left. If an array is not specified to shift, shift uses @ ARGV, the command line arguments of an array is passed to script or to an array named @.
+</div></div></div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 19. Explain Different Types Of Eval Statements?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+In general, there are two types of eval statements they are:<br>
+• Eval BLOCK and<br>
+• Eval EXPR<br>
+An expression is executed by eval EXPR and BLOCK is executed by eval BLOCK. Entire block is executed by eval block, BLOCK. When you want your code passed in expression then first one is used and to parse code in the block, second one is used.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 20. Describe Returning Values From Subroutines?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+The value of last expression which is evaluated is the return value of subroutine or explicitly, a returned statement can be used to exit subroutine which specifies return value. This return value is evaluated in perfect content based on content of subroutine call.
+</div></div></div><br>
+ 
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 21. What Are The Two Different Types Of Data Perl Handles?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Perl handles two types of data they are<br>
+(i) Scalar Variables and<br>
+(ii) Lists<br>
+Scalar variables hold a single data item whereas lists hold multiple data items.
+</div></div></div><br>
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 22. What Are Scalar Variables?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Scalar variables are what many programming languages refer to as simple variables. They hold a single data item, a number, a string, or a perl reference. Scalars are called scalars to differentiate them from constructs that can hold more than one item, like arrays.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 23. Explain About Lists?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+A list is a construct that associates data elements together and you can specify a list by enclosing those elements in parenthesis and separating them with commas. They could themselves be arrays, hashes or even other lists. Lists do not have a specific list data type.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 24. Name All The Prefix Dereferencer In Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+The symbol that starts all scalar variables is called a prefix dereferencer. The different types of dereferencer are.<br>
+(i) $-Scalar variables<br>
+(ii) %-Hash variables<br>
+(iii) @-arrays<br>
+(iv) &-subroutines<br>
+(v) Type globs-*myvar stands for @myvar, %myvar.
+</div></div></div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 25. Explain About An Ivalue?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+An ivalue is an item that can serve as the target of an assignment. The term I value originally meant a “left value”, which is to say a value that appears on the left. An ivalue usually represents a data space in memory and you can store data using the ivalues name. Any variable can serve as an ivalue.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 26. How Does A "grep" Function Perform?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Grep returns the number of lines the expression is true. Grep returns a sub list of a list for which a specific criterion is true. This function often involves pattern matching. It modifies the elements in the original list.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 27. Explain About Typeglobs?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Type globs are another integral type in perl. A typeglob`s prefix derefrencer is *, which is also the wild card character because you can use typeglobs to create an alias for all types associated with a particular name. All kinds of manipulations are possible with typeglobs.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 28. Is There Any Way To Add Two Arrays Together?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Of course you can add two arrays together by using push function. The push function adds a value or values to the end of an array. The push function pushes the values of list onto the end of the array. Length of an array can be increased by the length of list.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 29. How To Use The Command Shift?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Shift array function shifts off the first value of the array and returns it, thereby shortening the array by one element and moving everything from one place to the left. If you don’t specify an array to shift, shift uses @ ARGV, the array of command line arguments passed to the script or the array named @-.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 30. What Exactly Is Grooving And Shortening Of The Array?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+You can change the number of elements in an array simply by changing the value of the last index of/in the array $#array. In fact, if you simply refer to a nonexistent element in an array perl extends the array as needed, creating new elements. It also includes new elements in its array.
+</div></div></div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 31. What Are The Three Ways To Empty An Array?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+The three different ways to empty an array are as follows<br>
+1) You can empty an array by setting its length to a negative number.<br>
+2) Another way of empting an array is to assign the null list ().<br>
+3) Try to clear an array by setting it to undef, but be aware when you set to undef.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 32. How Do You Work With Array Slices?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+An array slice is a section of an array that acts like a list, and you indicate what elements to put into the slice by using multiple array indexes in square brackets. By specifying the range operator you can also specify a slice.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 33. What Is Meant By Splicing Arrays Explain In Context Of List And Scalar.
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Splicing an array means adding elements from a list to that array, possibly replacing elements now in the array. In list context, the splice function returns the elements removed from the array. In scalar context, the splice function returns the last element removed.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 34. What Are The Different Types Of Perl Operators?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+There are four different types of perl operators they are<br>
+(i) Unary operator like the not operator<br>
+(ii) Binary operator like the addition operator<br>
+(iii) Tertiary operator like the conditional operator<br>
+(iv) List operator like the print operator<br>
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 35. Which Has The Highest Precedence, List Or Terms? Explain?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Terms have the highest precedence in perl. Terms include variables, quotes, expressions in parenthesis etc. List operators have the same level of precedence as terms. Specifically, these operators have very strong left word precedence.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 36. What Is Perl Scripting?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Perl Scripting is one of the robust scripting languages in the IT market which is being used in “n” of fields. Perl is rich in finding Regular expressions and stands unique in all fields of application.
+<br><br>
+PERL is a scripting language. Since all scripting languages are interpreter based languages but not compiler based languages, we use for optimization of code in all application.
+</div></div></div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 37. Why Do We Use Perl Scripting?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+We use PERL scripting because it is rich in all regular expressions and functional concepts, we can create our own rules to find out particular generalized pattern by using regular expression. PERL supports or compatible in almost 76+ Operating systems and supports more than 3000 modules, called as CPAN (Comprehensive Perl Archive Network) modules.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 38. What Is A Subroutine?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Subroutine is perl is a block of code specially combined/grouped to perform a particular task.Which can be called at any point of time in a perl program.
+Advantage using Subroutine<br>
+a) helps in modular programming making it easier to understand and maintain.<br>
+b)eliminates duplication by reusing the same code/calling the subroutine.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 39. Name An Instance You Used In Cpan Module?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+CGI, DBI etc are very common packages used from CPAN. there are thousands of other useful modules.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 40. I Have A Variable Named $objref Which Is Defined In Main Package. I Want To Make It As A Object Of Class Xyz. How Could I Do It?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+use XYZ;<br>
+my $objref= XYZ->new();
+ </div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 41. What Is Meant 'die' In A Perl Program?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+If the condition defined before the DIE statement is NOT met, the script will stop execution at that point, printing out the default error, if a custom error message is not defined.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 42. What Is Hash In Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Hash in basically used to comment the script line.<br>
+A hash is and unordered set of key/value pairs that you access using strings (keys) as subscripts, to look up the scalar value corresponding to a given key.
+ </div></div></div>
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+ <br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 43. What Does This Mean :
+'$_' ?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Default variable in Perl.
+Its an Default variable in Perl, where the input from the user will be taken into this variable if the variable is not defined by the user.
+</div></div></div><br>
+
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 44. What Is A Datahash(). What Does It Mean? And For What Purpose It Is Used??
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+In Win32::ODBC, DataHash() function is used to get the data fetched through the sql statement in a hash format.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 45. Explain About Returning Values From Subroutines (functions)?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+The return value of the subroutine is the value of the last expression evaluated or you can explicitly use a return statement to exit the subroutine specifying the return value. That return value is evaluated in the appropriate content depending on the content of the subroutine call.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 46. What Is Meant By A 'pack' In Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Pack Converts a list into a binary representation<br>
+Takes an array or list of values and packs it into a binary structure, returning the string containing the structure<br>
+Hope that kills the problem
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 47. How Do You Connect To Database In Perl
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+There is DBI module. use DBI;my $dbh = DBI->connect('dbi:Oracle:orcl', 'username', 'password',)where username and password is yours. This is example for oracle database.
+<br><br>
+For Sybase:<br>
+use DBI;<br>
+my $dbh = DBI->connect('dbi:Sybase:server=$SERVER', 'username', 'password')
+ </div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 48. What Is A Short Circuit Operator?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+The C-Style operator, ll, performs a logical (or) operation and you can use it to tie logical clauses together, returning an overall value of true if either clause is true. This operator is called a short-circuit operator because if the left operand is true the right operand is not checked or evaluated.
+ </div></div></div>
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+ <br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 49. How To Connect With Sqlserver From Perl And How To Display Database Table Info?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+There is a module in perl named DBI - Database independent interface which will be used to connect to any database by using same code. Along with DBI we should use database specific module here it is SQL server. for MSaccess it is DBD::ODBC, for MySQL it is DBD::mysql driver, for integrating oracle with perl use DBD::oracle driver is used. IIy for SQL server there are available many custom defined ppm( perl package manager) like Win32::ODBC, mssql::oleDB etc.so, together with DBI, mssql::oleDB we can access SQL server database from perl. The commands to access database is same for any database.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 50. What Value Is Returned By A Lone Return; Statement?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+The undefined value in scalar context, and the empty list value () in list context. This way functions that wish to return failure can just use a simple return without worrying about the context in which they were called.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 51. How To Turn On Perl Warnings? Why Is That Important?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Perl is very forgiving of strange and sometimes wrong code, which can mean hours spent searching for bugs and weird results. Turning on warnings helps uncover common mistakes and strange places and save a lot of debugging time in the long run. There are various ways of turning on Perlwarnings:
+<br><br>
+* For Perl one-liner, use -w option on the command line.<br>
+* On Unix or Windows, use the -w option in the shebang line (The first # line in the script). Note: Windows Perl interpreter may not require it.<br>
+* For other systems, choose compiler warnings, or check compiler documentation.
+ </div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 52. Write A Script To Reverse A String Without Using Perl's Built In Functions?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+my $txt = 'Hello World';<br>
+my $len= length($txt);<br>
+my $rev;<br>
+while($len > 0){<br>
+$len--;<br>
+$rev .= substr($txt,$len,1);<br>
+}<br>
+print $txt, ' - Reversed = ' , $rev;
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 53. What Is Perl One-liner?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+There are two ways a Perl script can be run:<br>
+<br>--from a command line, called one-liner, that means you type and execute immediately on the command line. You'll need the -e option to start like "C: %gt perl -e "print "Hello";". One-liner doesn't mean one Perl statement. One-liner may contain many statements in one line.
+<br>--from a script file, called Perl program.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 54. What Are The Different Types Of Eval Statements?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+There are two different types of eval statements they are eval EXPR and eval BLOCK.<br>
+Eval EXPR executes an expression and eval BLOCK executes BLOCK. Eval Block executes an entire block, BLOCK. First one is used when you want your code passed in the expression and the second one is used to parse the code in the block.
+</div></div></div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 55. What Is Your Experience Of Interfacing Perl To Database?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+The correct answer is DBI
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 56. What Is Cpan ? What Are The Modules Coming Under This?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+CPAN is Comprehensive Perl Archive Network. It’s a repository contains thousands of Perl modules, source and documentation, and all under GNU/GPL or similar license. Some Linux distributions provide a tool named "cpan" with which you can install packages directly from CPAN
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 57. Given A File, Count The Word Occurrence (case Insensitive)?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+open(FILE,"filename");<br>
+@array=; $wor="word to be found";<br>
+$count=0; foreach $line (@array) { @arr=split (/s+/,$line);<br>
+foreach $word (@arr) { if ($word =~ /s*$wors*/i) $count=$count+1; } }
+<br><br>
+print "The word occurs $count times";
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 58. How Do I Set Environment Variables In Perl Programs?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+As you may remember, "%ENV" is a special hash in Perl that contains the value of all your environment variables.<br><br>
+
+<br><br>Because %ENV is a hash, you can set environment variables just as you'd set the value of any Perl hash variable. Here's how you can set your PATH variable to make sure the following four directories are in your path::
+
+<br><br>$ENV{'PATH'} = '/bin:/usr/bin:/usr/local/bin:/home/yourname/bin';
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 59. Why We Use Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+1.Perl is a powerful free interpreter.<br>
+2.Perl is portable, flexible and easy to learn.<br><br>
+
+-For shell scripting<br>
+-For CGI<br>
+-Tons of scripts are available.<br>
+-Easy development<br>
+-Enormous big support script archive like CPAN<br>
+-No one starts to write a Perl scripts from scratch, you choose one from an archive and modify that.<br>
+-It is a "mature" scripting language.<br>
+-You may find Perl interpreter on every mission critical environment<br>
+-Easy to learn
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 60. Why Does Perl Not Have Overloaded Functions?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Because you can inspect the argument count, return context, and object types all by yourself.
+In Perl, the number of arguments is trivially available to a function via the scalar sense of @_, the return context via want array(), and the types of the arguments via ref() if they're references and simple pattern matching like /^d+$/ otherwise. In languages like C++ where you can't do this, you simply must resort to overloading of functions.
+</div></div></div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 61. Which Of These Is A Difference Between C++ And Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+Perl can have objects whose data cannot be accessed outside its class, but C++ cannot.
+Perl can use closures with unreachable private data as objects, and C++ doesn't support closures. Furthermore, C++ does support pointer arithmetic via `int *ip = (int*)&object', allowing you do look all over the object. Perl doesn't have pointer arithmetic. It also doesn't allow `#define private public' to change access rights to foreign objects. On the other hand, once you start poking around in /dev/mem, no one is safe.
+</div></div></div><br>
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 62. How To Concatenate Strings With Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+Method #1 - using Perl's dot operator:<br>
+$name = 'checkbook';<br>
+$filename = "/tmp/" . $name . ".tmp";<br><br>
+
+Method #2 - using Perl's join function<br>
+$name = "checkbook";<br>
+$filename = join "", "/tmp/", $name, ".tmp";<br><br>
+
+Method #3 - usual way of concatenating strings<br>
+$filename = "/tmp/${name}.tmp";
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 63. What Is The Difference Between Chop & Chomp Functions In Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+chop is used to remove last character,chomp function removes only line endings.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 64. What Is Hash?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+Hash is an associative array where data is stored in<br>
+"key"->"value" pairs.<br>
+Eg : fruits is a hash having their names and price<br>
+%fruits = ("Apple", "60", "Banana", "20", "Peers", "40");
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 65. How Would You Replace A Char In String And How Do You Store The Number Of Replacements?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+$str='Hello';<br>
+$cnt= ($str=~s/l/i/g);<br>
+print $cnt;
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 66. How Do You Open A File For Writing?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+open FILEHANDLE, ">$FILENAME"
+</div></div></div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 67. What's Your Favorite Module And Why?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+My Favourite module is CGI.pm Bcoz it can handle almost all the tasks like<br>
+1. parsing the form input<br>
+2. printiing the headers<br>
+3. can handle cookies and sessions and much more
+</div></div></div><br>
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 68. How To Implement Stack In Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+Stack is LIFO (Last in First out), In perl that could be inplemented using the push() and shift() functions. push() adds the element at the last of array and shift() removes from the beginning of an array.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 69. Why Do You Program In Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+Perl is easy, fast and its fun to code in perl.<br>
+Perl is rich with various packages, N/w programming is very easy and there are lot more advantages to say.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 70. How We Can Navigate The Xml Documents?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+You can use SAX if what you require is simple accesing of the xml structure. You can go for DOM if you need node handling capabilities like inserting a node, modifying a node, deleteing node and stuff like that.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 71. Help In Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+perldoc -f print
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 72. What Is The Use Of "stderr()"?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+STDERR:<br>
+The special filehandle for standard error in any package.
+</div></div></div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 73. Advantages Of C Over Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+In reality PERL interpreter is written in C. So what all advantages C have are also possesed by PERL. Otherwise C is faster than PERL, because PERL is an interpreted language.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 74. Perl Regular Expressions Are Greedy" What Does This Mean?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+Perl regular expressions normally match the longest string possible. that is what is called as "greedy match"
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 75. What Does The Word '&myvariable' Mean?
+What Does The Symbol '&' Means? What's Purpose Of It?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+
+&myvariable is calling a sub-routine.<br><br>
+
+& is used to identify a sub-routine.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 76. What Is Super?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+Super refers to current package ancestor.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 77. What Is Rpc? Why Do I Need It?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+RPC:A call to a procedure in a different address space. In a traditional procedure call, the calling procedure and the called procedure are in the same address space on one machine. In a remote procedure call, the calling procedure invokes a procedure in a different address space and usually on a different machine.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 78. What Does Init 5 And Init 0 Do?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+init 5 will shutdown and Power-off the server.<br>
+
+init 0 will bring the server to the ok> prompt (Fourth monitor)
+</div></div></div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 79. What Does Ndd Do?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+ndd command will hardcore the speed of the network interface card.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 80. What Is Obp And How Do You Access It?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+OBP is called as Open Boot PROM. This OBP can be accessiable thru ok> prompt
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 81. How Do You Boot From Cd-rom?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+Booting form CD-ROM can be done by the command<br>
+ok >boot cdrom
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 82. What Is /etc/system For?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+/etc/system is a kernal file of Solaris OS.
+ </div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 83. How Do You Boot From A Network With Jumpstart?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+boot net - install
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 84. What Is Jumpstart?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+The Jumpstart feature is an automatic installation process available in the Solaris operating environment. It allows system administrators to categorize machines on their network and automatically install systems based on the category to which a system belongs.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 85. What Is Lom
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+Short for LAN on motherboard. The term refers to a chip or chipset capable of network connections that has been embedded directly on the motherboard of a desktop, workstation or server. Instead of requiring a separate network interface card to access a local-area network, such as Ethernet, the circuits are attached to the motherboard. An advantage of a LOM system is an extra available PCI slot that is not being used by the network adapter.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 86. How To Create A Package?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+pkgmk -o -r / -d /tmp -f Prototype
+</div></div></div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 87. How Do You View Shared Memory Statistics?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+swap -l -> displays swap usage<br>
+prstat -> examines all active processes on the system and reports statistics based
+on the selected output mode and sort order<br><br>
+vmstat -> reports information about processes, memory, paging, block IO, traps,
+and cpu activity<br><br>
+pmap -> lists the virtual memory mappings underlying the given process
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 88. What Is Vts?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+Sun Validation Test Suite -> tests and validates Sun hardware by verifying the configuration and functionality of hardware controllers, devices
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 89. What Is Grep Used For In Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+Grep is used with regular expression to check if a parituclar value exist in an array. it returns 0 if the value does not exists, 1 otherwise.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 90. How To Code In Perl To Implement The Tail Function In Unix?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+You have to maintain a structure to store the line number and the size of the file at that time eg. 1-10bytes, 2-18bytes.. you have a counter to increase the number of lines to find out the number of lines in the file. once you are through the file, you will know the size of the file at any nth line, use 'sysseek' to move the file pointer back to that position (last 10) and then start reading till the end.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 91. What Are The Arguements We Normally Use For Perl Interpreter
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+-e for Execute, -c to compile, -d to call the debugger on the file specified, -T for traint mode for security/input checking -W for show all warning mode (or -w to show less warning)
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 92. What Is It Meants By '$_'?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+it is a default variable which holds automatically, a list of arguements passed to the subroutine within parenthesis.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 93. What Is The Tk Module?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+it provides a GUI interface.
+ </div></div></div>
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+ <br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 94. How To Concatinate Strings In Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+through . operator
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 95. What Value Is Returned By A Lone 'return;' Statement?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+The undefined value in scalar context, and the empty list value () in list context. This way functions that wish to return failure can just use a simple return without worrying about the context in which they were called.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 96. How Do Find The Length Of An Array?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+$@array
+ </div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 97. What Does Read() Return At End Of File?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+A defined (but false) 0 value is the proper indication of the end of file for read() and sysread().
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 98. How Do You Print Out The Next Line From A Filehandle With All Its Bytes Reversed?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+print scalar reverse scalar Surprisingly enough, you have to put both the reverse and the into scalar context separately for this to work.
+</div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 99. What Does Perl Do If You Try To Exploit The Execve(2) Race Involving Setuid Scripts?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+Sends mail to root and exits. It has been said that all programs advance to the point of being able to automatically read mail. While not quite at that point (well, without having a module loaded), Perl does at least automatically send it.
+</div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 100. What Are Scalar Data And Scalar Variables?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+Perl has a flexible concept of data types. Scalar means a single thing, like a number or string. So the Java concept of int, float, double and string equals to Perl's scalar in concept and the numbers and strings are exchangeable. Scalar variable is a Perl variable that is used to store scalar data. It uses a dollar sign $ and followed by one or more aphanumeric characters or underscores. It is case sensitive.
+ </div></div></div>
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+ <br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 101. How To Start Perl In Interactive Mode?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+perl -e -d 1 PerlConsole.
+ </div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 102. What Package You Use To Create A Windows Services?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+use Win32::OLE.
+ </div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 103. What Is A Datahash()
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+in Win32::ODBC, DataHash() function is used to get the data fetched through the sql statement in a hash format.
+ </div></div></div><br>
+
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 104. What Does This Symbol Mean '->'?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+In Perl it is an infix dereference operator. for array subscript, or a hash key, or a subroutine, then this must be a reference. can also be used as method invocation.
+ </div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 105. What Is Cpan?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+CPAN is comprehensive Perl Archive Network. its a repository contains thousands of Perl Modules, source and documentation, and all under GNU/GPL or smilar licence. Some linux distribution provide a till names 'cpan'; which you can install packages directly from cpan.
+ </div></div></div><br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 106. What Is The Difference Between Exec And System?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+exec runs the given process, switches to its name and never returns while system forks off the given process, waits for its to complete and then return.
+ </div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 107. What Is The Difference Between For And Foreach?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+functionally, there is no difference between them.
+ </div></div></div>
+ 
+ <br>
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 108. What Is A Regular Expression?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+it defines a pattern for a search to match.
+ </div></div></div><br>
+
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 109. What Is Stderr() In Perl?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+
+special file handler to standard error in any package.
+ </div></div></div><br>
+
+
+
+ <div class="panel-group m-bot20" id="accordion"><div class="panel panel-default"><div class="panel-heading">
+ 110. List The Files In Current Directory Sorted By Size ?
+</a> </h4></div> <div class="panel-body">  <b>Answer:</b><br>
+- ls -l | grep ^- | sort -nr
+ </div></div></div><br>
+
+
+
+
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- hori -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3860801891577656"
+     data-ad-slot="8848173133"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+				  
+				  
+				  
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+          </div>
+          
+		  
+		  
+		  
+	
+		  
+		
+		  
+		  
+ <div class="col-md-2" style="position:sticky; 
+		  top:-1120px;">
+            	  <div class="row">
+  <div class="panel panel-default col-sm-14">
+<div class="emptyBlocks"></div>
+
+    
+    <div class="panel-body"><div class="sidebar">
+
+
+
+
+
+
+
+
+
+<center><a href="pd_qa.html" ><span class="icon_download_alt"></span> <img src="images/book.jpg"></a>	</center>
+	
+      
+<BR>
+            <div class="btn-row">
+                  <div class="btn-group-vertical">
+				  
+                    <a href="digital_electronics.html"><button class="btn btn-default" type="button">Digital Electronics Q&A </button></a>
+                    <a href="pd_mcqs.html"><button class="btn btn-default" type="button"> Physical Design MCQs </button></a>
+					<a href="sta_numericals.html"><button class="btn btn-default" type="button"> STA Numericals</button></a>
+                    <a href="pd_verification.html"><button class="btn btn-default" type="button"> PD Verification</button></a>
+				  </div>
+                </div>
+
+				
+				
+
+		
+				
+    </div>
+	
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="panel-group wrap" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Logic Synthesis
+        </a>
+      </h4> </div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">  <div class="panel-body">
+       <ul class="bullets">
+<li>What is synthesis?</li>
+<li>Goals of synthesis</li>
+<li>Synthesis Flow</li>
+<li>Synthesis (input & output)</li>
+<li>HDL file gen. & lib setup</li>
+<li>Reading files</li>
+<li>Design envi. Constraints </li>
+<li>Compile</li>
+<li>Generate Reports</li>
+<li>Write files<br></li>
+</ul><center><a class="btn btn-danger" href="logic_synthesis.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="headingTwo">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          PD Inputs
+        </a>
+      </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">       <ul class="bullets">
+<li>Netlist(.v or .vhd)</li>
+<li>Constraints</li>
+<li>Liberty Timing File(.lib or .db)</li>
+<li>Library Exchange Format(LEF)</li>
+<li>Technology Related files</li>
+<li>TLU+ File</li>
+<li>Milkyway Library</li>
+<li>Power Specification File</li>
+<li>Optimization Directives</li>
+<li>Design Exchange Formats</li>
+<li>Clock Tree Constraints/ Specification</li>
+<li>IO Information File</li></ul>
+<center><a class="btn btn-danger" href="pd_inputs.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="headingThree">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          FloorPlan
+        </a>
+      </h4>
+        </div>
+        
+		<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body"><ul class="bullets">
+<li>import design</li>
+<li>sanity checks</li>
+<li>partitioning (flat and hierarchy)</li>
+<li>objectives of floorplan</li>
+<li>Inputs of floorplan</li>
+<li>Floorplan flowchart</li>
+<li>Floorplan Techniques</li>
+<li>Terminologies and definitions  </li>
+<li>Steps in FloorPlan </li>
+<li>Utilization</li>
+<li>IO Placement</li>
+<li>Macro Placement</li>
+<li>Macro Placement Tips</li>
+<li>Blockages (soft,hard,partial)</li>
+<li>Halo/keepout margin</li>
+<li>Issues arises due to bad floor-plan)</li>
+<li>FloorPlan Qualifications</li>
+<li>FloorPlan Output</li></ul>
+<center><a class="btn btn-danger" href="floorplan.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="headingFour">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          PowerPlan
+        </a>
+      </h4>
+        </div>
+        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+          <div class="panel-body"><ul class="bullets">
+<li>levels of power distribution </li>
+<li>Power Management</li>
+<li>Powerplanning involves</li>
+<li>Inputs of powerplan</li>
+<li>Properties of ideal powerplan</li>
+<li>Power Information </li>
+<li>PowerPlan calculations</li>
+<li>Sub-Block configuration</li>
+<li>fullchip configuration</li>
+<li>UPF Content</li>
+<li>Isolation Cell</li>
+<li>Level Shifters</li>
+<li>Retention Registers</li>
+<li>Power Switches</li>
+<li>Types of Power dissipation</li>
+<li>IR Drop</li>
+<li>Electromigration</li></ul>
+<center><a class="btn btn-danger" href="powerplan.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="headingFour">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFour">
+          Placement
+        </a>
+      </h4>
+        </div>
+        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+          <div class="panel-body"><ul class="bullets">
+<li>Pre-Placement</li>
+<li>Pre-Placement Optimization</li>
+<li>Placement</li>
+<li>Placement Objectives</li>
+<li>Goals of Placement</li>
+<li>Inputs of Placement</li>
+<li>Checks Before placement </li>
+<li>Placement Methods(Timing & Congestion)</li>
+<li>Placement Steps</li>
+<li>Placement Optimization </li>
+<li>Placement Qualifications</li>
+<li>Placement Outputs</li></ul>
+<center><a class="btn btn-danger" href="placement.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="heading8">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapseFour">
+          CTS
+        </a>
+      </h4>
+        </div>
+        <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+          <div class="panel-body"><ul class="bullets">
+<li>Pre-CTS Optimization</li></a>
+<li>CTS</li></a>
+<li>Diff b/w HFNS & CTS</li></a>
+<li>Diff b/w Clock & normal buffer</li></a>
+<li>CTS inputs</li></a>
+<li>CTS Goals</li></a>
+<li>Clock latency</li></a>
+<li>Clock problems </li></a>
+<li>Main concerns for Clock design </li></a>
+<li>Clock Skew  </li></a>
+<li>Clock Jitter</li></a>
+<li>CTS Pre requisites</li></a>
+<li>CTS Objects</li></a>
+<li>CTS Flow</li></a>
+<li>Clock Tree Reference</li></a>
+<li>Clock Tree Exceptions</li></a>
+<li>CTS Algorithm</li></a>
+<li>Analyze the Clock tree</li></a>
+<li>Post CTS Optimization</li></a>
+<li>CTS Outputs</li></ul>
+<center><a class="btn btn-danger" href="cts.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="headingsix">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsesix" aria-expanded="false" aria-controls="collapseFour">
+          Routing
+        </a>
+      </h4>
+        </div>
+        <div id="collapsesix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingsix">
+          <div class="panel-body"><ul class="bullets">
+<li>Importance of Routing as Technology Shrinks</li>
+<li>Routing Objectives</li>
+<li>Routing</li>
+<li>Routing Inputs</li>
+<li>Routing Goals</li>
+<li>Routing constraints</li>
+<li>Routing Flow</li>
+<li>Trial/Global Routing</li>
+<li>Track Assignment</li>
+<li>Detail/Nano Routing</li>
+<li>Grid based Routing</li>
+<li>Routing Preferences</li>
+<li>Post Routing Optimization </li>
+<li>Filler Cell Insertion</li>
+<li>Metal Fill</li>
+<li>Spare Cells Tie-up/ Tie-down</li></ul>
+<center><a class="btn btn-danger" href="routing.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="headingseven">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseseven" aria-expanded="false" aria-controls="collapseFour">
+          STA
+        </a>
+      </h4>
+        </div>
+        <div id="collapseseven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingseven">
+          <div class="panel-body"><ul class="bullets">
+<li>Diff b/w DTA & STA</li>
+<li>Static Timing Analysis</li>
+<li>main steps in STA</li>
+<li>STA(input & output)</li>
+<li>Timing Report</li>
+<li>Clocked storage elements</li>
+<li>Delays </li>
+<li>Pins related to clock </li>
+<li>Timing Arc</li>
+<li>Timing Unate</li>
+<li>Clock definitions in STA</li>
+<li>Timing Paths </li>
+<li>Timing Path Groups </li>
+<li>Clock Latency </li>
+<li>Insertion Delay </li>
+<li>Clock Uncertainty</li>
+<li>Clock Skew </li>
+<li>Clock Jitter </li>
+<li>Glitch</li>
+<li>Pulse width</li>
+<li>Duty Cycle </li>
+<li>Transition/Slew</li>
+<li>Asynchronous Path</li>
+<li>Critical Path</li>
+<li>Shortest Path </li>
+<li>Clock Gating Path</li>
+<li>Launch path </li>
+<li>Arrival Path </li>
+<li>Required Time</li>
+<li>Common Path Pessimism(CPP/CRPR)</li>
+<li>Slack </li>
+<li>Setup and Hold time</li>
+<li>Setup & hold time violations</li>
+<li>Recovery Time</li>
+<li>Removal Time </li>
+<li>Recovery & Removal time violations</li>
+<li>Single Cycle path </li>
+<li>Multi Cycle Path </li>
+<li>Half Cycle Path</li>
+<li>False Path</li>
+<li>Clock Domain Crossing(CDC) </li>
+<li>Clock Domain Synchronization Scheme</li>
+<li>Bottleneck Analysis</li>
+<li>Multi-VT Cells(HVT LVT SVT)</li>
+<li>Time Borrowing/Stealing</li>
+<li>Types of STA (PBA GBA)</li>
+<li>Diff b/w PBA & GBA </li>
+<li>Block based STA & Path based STA</li></ul>
+<center><a class="btn btn-danger" href="sta.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+<br>
+
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="heading10">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false" aria-controls="collapseFour">
+          Congestion Analysis
+        </a>
+      </h4>
+        </div>
+        <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
+          <div class="panel-body"><ul class="bullets">
+<li>Congestion Analysis</li>
+<li>Routing Congestion Analysis</li>
+<li>Placement Cong. Analysis</li>
+<li>Routing Congestion causes</li>
+<li>Congestion Fixes</li>
+<li>Global & local cong.</li>
+<li>Congestion Profiles</li></ul>
+<center><a class="btn btn-danger" href="congestion_analysis.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="heading11">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false" aria-controls="collapseFour">
+          Power Analysis
+        </a>
+      </h4>
+        </div>
+        <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
+          <div class="panel-body"><ul class="bullets">
+<li>Power Analysis</li>
+<li>Leakeage Power</li>
+<li>Switching Power</li>
+<li>Short Circuit</li>
+<li>Leakage/static Power </li>
+<li>Static power Dissipation</li>
+<li>Types of Static Leakage</li>
+<li>Static Power Reduction Techniques </li>
+<li>Dynamic/Switching Power </li>
+<li>Dynamic Power calculation depends on </li>
+<li>Types of Dynamic Power </li>
+<li>Dynamic Power Reduction Techniques </li></ul>
+<center><a class="btn btn-danger" href="power_analysis.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="heading12">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapseFour">
+          IR Analysis
+        </a>
+      </h4>
+        </div>
+        <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
+          <div class="panel-body"><ul class="bullets">
+<li>IR Drop Analysis</li>
+<li>Types of IR Drop & their methodologies </li>
+<li>IR Drop Reasons </li>
+<li>IR Drop Robustness Checks </li>
+<li>IR Drop Impacts </li>
+<li>IR Drop Remedies </li>
+<li>Ldi/dt Effects </li></ul>
+<center><a class="btn btn-danger" href="ir_analysis.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+ </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+<br>
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="heading13">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse13" aria-expanded="false" aria-controls="collapseFour">
+          Issues in PD
+        </a>
+      </h4>
+        </div>
+        <div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13">
+          <div class="panel-body"><ul class="bullets">
+<li>Design Parasitics</li>
+<li>Latch-Up </li>
+<li>Electrostatic Discharge(ESD) </li>
+<li>Electromigration </li>
+<li>Antenna Effect </li>
+<li>Crosstalk </li>
+<li>Soft Errors </li>
+<li>Sef Heating </li>
+</ul>
+<center><a class="btn btn-danger" href="pd_issues.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+    </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading14">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse14" aria-expanded="false" aria-controls="collapseFour">
+          Cells in PD
+        </a>
+      </h4>
+        </div>
+        <div id="collapse14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading14">
+          <div class="panel-body"><ul class="bullets">
+<li>Cells in PD</li>
+<li>Standard Cells </li>
+<li>ICG Cells </li>
+<li>Well Taps </li>
+<li>End Caps </li>
+<li>Filler Cells </li>
+<li>Decap Cells </li>
+<li>ESD Clamp </li>
+<li>Spare Cells</li>
+<li>Tie Cells</li>
+<li>Delay Cells</li>
+<li>Metrology Cells </li></ul>
+<center><a class="btn btn-danger" href="pd_cells.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading15">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse15" aria-expanded="false" aria-controls="collapseFour">
+          IO Design
+        </a>
+      </h4>
+        </div>
+        <div id="collapse15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading15">
+          <div class="panel-body"><ul class="bullets">
+<li>IO Pads</li>
+<li>Types of IO Pads</li>
+      </ul>
+<center><a class="btn btn-danger" href="io_design.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+
+  </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading16">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse16" aria-expanded="false" aria-controls="collapseFour">
+          Delay Models
+        </a>
+      </h4>
+        </div>
+        <div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading16">
+          <div class="panel-body"><ul class="bullets">
+<li>Delay Calculation</li>
+<li>Delay Models</li>
+<li>Interconnect Delay Models<br> </li>
+<li>Cell Delay Models</li>   </ul>     
+<center><a class="btn btn-danger" href="delay_models.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+  
+</div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading17">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse17" aria-expanded="false" aria-controls="collapseFour">
+          ECO
+        </a>
+      </h4>
+        </div>
+        <div id="collapse17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading17">
+          <div class="panel-body"><ul class="bullets">
+<li>Engineering Change Order</li>
+<li>Post Synthesis ECO </li>
+<li>Post Route ECO </li>
+<li>Post Silicon ECO </li>
+<li>Metal Layer ECO Example </li></ul>
+<center><a class="btn btn-danger" href="eco.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading18">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse18" aria-expanded="false" aria-controls="collapseFour">
+          Types of Std cells
+        </a>
+      </h4>
+        </div>
+        <div id="collapse18" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading18">
+          <div class="panel-body"><ul class="bullets">
+<li>std cell library types</li></a>
+<li>Classification wrt density and Vth </li> </ul>
+<center><a class="btn btn-danger" href="std_cell_types.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+         </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+<br>
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading19">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse19" aria-expanded="false" aria-controls="collapseFour">
+          DFM/DFY
+        </a>
+      </h4>
+        </div>
+        <div id="collapse19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading19">
+          <div class="panel-body"><ul class="bullets">
+<li>The Discontinuity</li>
+<li>Discontinuity: Classification</li>
+<li>DFM/DFY </li>
+<li>Yield Classification </li>
+<li>Why DFM/DFY? </li>
+<li>DFM/DFY Solution </li>
+<li>Wire Spreading</li>
+<li>metal Fill</li>
+<li>CAA</li>
+<li>CMP Aware-Design</li>
+<li>Redundant Via</li>
+<li>RET</li>
+<li>Litho Process Check(LPC)</li>
+<li>Layout Dependent Effects </li>
+<li>Resolution Enhancement Techniques </li>
+<li>Types of RET</li>
+<li>Optical Proximity Correction(OPC)</li>
+<li>Scattering Bars</li>
+<li>Multiple Patterning</li>
+<li>Phase-shift Masking </li>
+<li>Off-Axis Illumination</li></ul>
+<center><a class="btn btn-danger" href="dfm_dfy.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading20">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse20" aria-expanded="false" aria-controls="collapseFour">
+          MC/MM/OCV
+        </a>
+      </h4>
+        </div>
+        <div id="collapse20" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading20">
+          <div class="panel-body"><ul class="bullets">
+<li>Corners</li>
+<li>Need for corner analysis</li>
+<li>PVT Variations </li>
+<li>Corner Analysis</li>
+<li>PVT/RC Corners</li>
+<li>Temperature Inversion</li>
+<li>Cross Corner Analysis</li>
+<li>Modes of Analysis</li>
+<li>MC/MM Analysis</li>
+<li>OCV</li>
+<li>Derating</li>
+<li>OCV Timing Checks</li>
+<li>OCV Enhancements</li>
+<li>AOCV </li>
+<li>SSTA</li>
+<li>CRPR/CPPR</li></ul>
+          <center><a class="btn btn-danger" href="mc_mm_ocv.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+		  </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	 
+
+    </div>
+    <!-- end of #accordion -->
+
+
+
+
+<div class="panel panel-default col-sm-14">
+<div class="emptyBlocks"></div>
+    <div class="panel-body"><div class="sidebar">
+<center><br>
+</center>
+</center>
+</div></div></div>
+
+
+
+
+  </div>
+  <!-- end of wrap -->
+
+
+<style>
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: grey;
+  border-width: 1px;
+} 
+</style>
+
+
+
+
+
+
+<!-- end of container -->
+
+  </div>
+	 <!--/social-box-->
+          </div> 	  
+		  
+		  
+		  
+		  
+		  
+
+		
+            	  <div class="row">
+  <div class="panel panel-default col-sm-14">
+<div class="emptyBlocks"></div>
+
+    <style>
+body {
+  margin: 0;
+  font-family: 'Roboto';
+  font-size: 14px;
+  background: #455A64;
+}
+
+
+
+.container {
+  max-width: 970px;
+}
+
+
+.wrap {
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 2, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 0px;
+}
+
+a:focus,
+a:hover,
+a:active {
+  outline: 1;
+  text-decoration: black;
+}
+
+.panel {
+  border-width: 0 0 4px 0;
+  border-style: solid;
+  border-color: #696969;
+  background: none;
+  box-shadow: black;
+}
+
+.panel:last-child {
+  border-bottom: none;
+}
+
+.panel-group > .panel:first-child .panel-heading {
+  border-radius: 0px 0px 0 0;
+}
+
+.panel-group .panel {
+  border-radius: 0;
+}
+
+.panel-group .panel + .panel {
+  margin-top: 0;
+}
+
+.panel-heading {
+  background-color: #black;
+  border-radius: 0;
+  border: none;
+  color: #000000;
+  padding: 0;
+}
+
+.panel-title a {
+  display: block;
+  color: #000000;
+  padding: 0px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.panel-body {
+  background: #fff;
+}
+
+.panel:last-child .panel-body {
+  border-radius: 1 0 px px;
+}
+
+.panel:last-child .panel-heading {
+  border-radius: 0 0 4px 4px;
+  transition: border-radius 0.3s linear 0.2s;
+}
+
+.panel:last-child .panel-heading.active {
+  border-radius: 0;
+  transition: border-radius linear 0s;
+}
+/* #bs-collapse icon scale option */
+
+.panel-heading a:before {
+  position: absolute;
+  font-family: 'Material Icons';
+  right: px;
+  top: 0px;
+  font-size: 24px;
+  transition: all 0.5s;
+  transform: scale(1);
+}
+
+.panel-heading.active a:before {
+  content: ' ';
+  transition: all 0.9s;
+  transform: scale(0);
+}
+
+#bs-collapse .panel-heading a:after {
+  content: ' ';
+  font-size: 24px;
+  position: absolute;
+  font-family: 'Material Icons';
+  right: 5px;
+  top: 10px;
+  transform: scale(0);
+  transition: all 0.5s;
+}
+
+#bs-collapse .panel-heading.active a:after {
+  content: '\e909';
+  transform: scale(1);
+  transition: all 0.5s;
+}
+/* #accordion rotate icon option */
+
+#accordion .panel-heading a:before {
+  content: '\e316';
+  font-size: 24px;
+  position: absolute;
+  font-family: 'Material Icons';
+  right: 5px;
+  top: 10px;
+  transform: rotate(180deg);
+  transition: all 0.5s;
+}
+
+#accordion .panel-heading.active a:before {
+  transform: rotate(0deg);
+  transition: all 0.5s;
+}
+	</style>
+ 
+
+   
+   
+
+
+
+<script>
+$(document).ready(function() {
+  $('.collapse.in').prev('.panel-heading').addClass('active');
+  $('#accordion, #bs-collapse')
+    .on('show.bs.collapse', function(a) {
+      $(a.target).prev('.panel-heading').addClass('active');
+    })
+    .on('hide.bs.collapse', function(a) {
+      $(a.target).prev('.panel-heading').removeClass('active');
+    });
+});
+</script>
+				
+				
+				
+				
+    </div>
+  </div>
+</div>
+  </div>
+	 <!--/social-box-->
+          </div> 
+		  
+		  
+		  
+		  
+		  
+	
+		  
+		
+
+          <!--/col-->
+
+        </div>
+
+
+
+
+        <!-- statics end -->
+
+
+
+
+        <!-- project team & activity start -->
+        <div class="row">
+          <div class="col-md- portlets">
+            <!-- Widget -->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                
+				<div class="container">
+                
+        
+</div>
+	
+	 
+	  <div class="text-center">
+       
+          <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
+          -->
+          
+		 <center>
+
+
+
+Copyright © 2021 <BR>
+
+<div class="footer-wrapper">
+                        
+                       
+                        <a class="footer-icon linkedin" href="https://www.linkedin.com/in/ferozchoudhary/" target="_blank">
+                           <svg style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" width="35px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#0072FF">
+                              <g>
+                                 <path d="M8,54.7C8,55.4,8.6,56,9.3,56h9.3c0.7,0,1.3-0.6,1.3-1.3V23.9c0-0.7-0.6-1.3-1.3-1.3H9.3   c-0.7,0-1.3,0.6-1.3,1.3V54.7z"/>
+                                 <path d="M46.6,22.3c-4.5,0-7.7,1.8-9.4,3.7c-0.4,0.4-1.1,0.1-1.1-0.5l0-1.6c0-0.7-0.6-1.3-1.3-1.3h-9.4   c-0.7,0-1.3,0.6-1.3,1.3c0.1,5.7,0,25.4,0,30.7c0,0.7,0.6,1.3,1.3,1.3h9.5c0.7,0,1.3-0.6,1.3-1.3V37.9c0-1,0-2,0.3-2.7c0.8-2,2.6-4.1,5.7-4.1c4.1,0,6,3.1,6,7.6v15.9c0,0.7,0.6,1.3,1.3,1.3h9.3c0.7,0,1.3-0.6,1.3-1.3V37.4C60,27.1,54.1,22.3,46.6,22.3z"/>
+                                 <path d="M13.9,18.9L13.9,18.9c3.8,0,6.1-2.4,6.1-5.4C19.9,10.3,17.7,8,14,8c-3.7,0-6,2.3-6,5.4   C8,16.5,10.3,18.9,13.9,18.9z"/>
+                              </g>
+                           </svg>
+                        </a>
+                        <a class="footer-icon youtube" href="https://youtube.com/c/FerozAhmed_PhysicalDesign?sub_confirmation=1" target="_blank">
+                           <svg width="35px" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <g>
+                                 <path d="M31.67,9.179c0,0-0.312-2.353-1.271-3.389c-1.217-1.358-2.58-1.366-3.205-1.443C22.717,4,16.002,4,16.002,4   h-0.015c0,0-6.715,0-11.191,0.347C4.171,4.424,2.809,4.432,1.591,5.79C0.633,6.826,0.32,9.179,0.32,9.179S0,11.94,0,14.701v2.588   c0,2.763,0.32,5.523,0.32,5.523s0.312,2.352,1.271,3.386c1.218,1.358,2.815,1.317,3.527,1.459C7.677,27.919,15.995,28,15.995,28   s6.722-0.012,11.199-0.355c0.625-0.08,1.988-0.088,3.205-1.446c0.958-1.034,1.271-3.386,1.271-3.386s0.32-2.761,0.32-5.523v-2.588   C31.99,11.94,31.67,9.179,31.67,9.179z" fill="#E02F2F"/>
+                                 <polygon fill="#FFFFFF" points="12,10 12,22 22,16"/>
+                              </g>
+                           </svg>
+                        </a>
+						<a class="footer-icon facebook" href="https://www.facebook.com/zoref5619" target="_blank">
+                           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="35px"
+                              viewBox="0 0 512 512" fill="#385C8E" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                              <g>
+                                 <path d="M134.941,272.691h56.123v231.051c0,4.562,3.696,8.258,8.258,8.258h95.159c4.562,0,8.258-3.696,8.258-8.258V273.78h64.519c4.195,0,7.725-3.148,8.204-7.315l9.799-85.061c0.269-2.34-0.472-4.684-2.038-6.44c-1.567-1.757-3.81-2.763-6.164-2.763h-74.316V118.88c0-16.073,8.654-24.224,25.726-24.224c2.433,0,48.59,0,48.59,0c4.562,0,8.258-3.698,8.258-8.258V8.319c0-4.562-3.696-8.258-8.258-8.258h-66.965C309.622,0.038,308.573,0,307.027,0c-11.619,0-52.006,2.281-83.909,31.63c-35.348,32.524-30.434,71.465-29.26,78.217v62.352h-58.918c-4.562,0-8.258,3.696-8.258,8.258v83.975C126.683,268.993,130.379,272.691,134.941,272.691z"/>
+                              </g>
+                           </svg>
+                        </a>
+                        <a class="footer-icon instagram" href="https://www.instagram.com/rising_legend/" target="_blank">
+                           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="35px"
+                              viewBox="0 0 551.034 551.034" xml:space="preserve">
+                              <g>
+                                 <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="275.517" y1="4.57" x2="275.517" y2="549.72" gradientTransform="matrix(1 0 0 -1 0 554)">
+                                 <stop  offset="0" style="stop-color:#E09B3D"/>
+                                 <stop  offset="0.3" style="stop-color:#C74C4D"/>
+                                 <stop  offset="0.6" style="stop-color:#C21975"/>
+                                 <stop  offset="1" style="stop-color:#7024C4"/>
+                              </linearGradient>
+                              <path class="insta-square" style="fill:url(#SVGID_1_);" d="M386.878,0H164.156C73.64,0,0,73.64,0,164.156v222.722
+                                 c0,90.516,73.64,164.156,164.156,164.156h222.722c90.516,0,164.156-73.64,164.156-164.156V164.156
+                                 C551.033,73.64,477.393,0,386.878,0z M495.6,386.878c0,60.045-48.677,108.722-108.722,108.722H164.156
+                                 c-60.045,0-108.722-48.677-108.722-108.722V164.156c0-60.046,48.677-108.722,108.722-108.722h222.722
+                                 c60.045,0,108.722,48.676,108.722,108.722L495.6,386.878L495.6,386.878z"/>
+                              
+                                 <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="275.517" y1="4.57" x2="275.517" y2="549.72" gradientTransform="matrix(1 0 0 -1 0 554)">
+                                 <stop  offset="0" style="stop-color:#E09B3D"/>
+                                 <stop  offset="0.3" style="stop-color:#C74C4D"/>
+                                 <stop  offset="0.6" style="stop-color:#C21975"/>
+                                 <stop  offset="1" style="stop-color:#7024C4"/>
+                              </linearGradient>
+                              <path style="fill:url(#SVGID_2_);" d="M275.517,133C196.933,133,133,196.933,133,275.516s63.933,142.517,142.517,142.517
+                                 S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6c-48.095,0-87.083-38.988-87.083-87.083
+                                 s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083C362.6,323.611,323.611,362.6,275.517,362.6z"/>
+                              
+                              <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="418.31" y1="4.57" x2="418.31" y2="549.72" gradientTransform="matrix(1 0 0 -1 0 554)">
+                                 <stop  offset="0" style="stop-color:#E09B3D"/>
+                                 <stop  offset="0.3" style="stop-color:#C74C4D"/>
+                                 <stop  offset="0.6" style="stop-color:#C21975"/>
+                                 <stop  offset="1" style="stop-color:#7024C4"/>
+                              </linearGradient>
+                                 <circle style="fill:url(#SVGID_3_);" cx="418.31" cy="134.07" r="34.15"/>
+                              </g>
+                           </svg>
+                        </a>
+                     </div>
+
+</div>
+
+  </div>
+	<center>	<img src="images/footer.jpg"><br>	</center><br>
+<style>
+body{
+  background:#eee;
+  
+}
+.main{
+  display:flex;
+  margin-top:10px;
+  align-items:right;
+  justify-content:right;
+}
+.footer-wrapper .footer-icon,
+.footer-wrapper .footer-icon:visited {
+  display: inline-block;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  line-height: 60px;
+  margin: 0 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 28%;
+  box-shadow: 0 5px 15px -5px rgba(0,0,0,0.3);
+  opacity: 0.99;
+}
+.footer-wrapper .footer-icon:before {
+  content: '';
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.footer-wrapper .footer-icon,
+.footer-wrapper .footer-icon:before,
+.footer-wrapper .footer-icon svg{
+  transition: all 0.35s;
+  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  outline: 0;
+}
+.footer-wrapper .footer-icon:before {
+  top: 90%;
+  left: -110%;
+}
+.footer-wrapper .footer-icon:focus,
+.footer-wrapper .footer-icon:hover{
+    background-color: transparent;
+}
+.footer-wrapper .footer-icon svg{
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  height: 30px;
+  margin: auto;
+  font-size: 0;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.footer-wrapper .footer-icon.facebook:before {
+  background-color: #3b5998;
+}
+
+
+.footer-wrapper .footer-icon.telegram:before {
+  background-color: #3cf;
+}
+.footer-wrapper .footer-icon.google:before {
+  background-color: #dc4a38;
+}
+.footer-wrapper .footer-icon.linkedin:before{
+  background-color: #0072FF;
+}
+.footer-wrapper .footer-icon.youtube:before {
+  background-color: #E02F2F;
+}
+.footer-wrapper .footer-icon.youtube:hover svg g path,
+.footer-wrapper .footer-icon.youtube:focus svg g path {
+  fill:#fff;
+}
+.footer-wrapper .footer-icon.youtube:hover svg g polygon,
+.footer-wrapper .footer-icon.youtube:focus svg g polygon {
+  fill:#E02F2F;
+}
+
+.footer-wrapper .footer-icon.instagram:before {
+    background-color: #C21975;
+}
+/* .footer-wrapper .footer-icon.instagram:hover svg,
+.footer-wrapper .footer-icon.instagram:focus svg {
+  filter: invert(200%) sepia(50%) saturate(1) hue-rotate(100deg) brightness(100%) 
+ fill : #FFF;
+}*/
+.footer-icon.instagram:hover svg{
+	fill : #FFF;
+}
+
+.footer-wrapper .footer-icon:focus:before,
+.footer-wrapper .footer-icon:hover:before {
+  top: -10%;
+  left: -10%;
+}
+.footer-wrapper .footer-icon:focus svg,
+.footer-wrapper .footer-icon:hover svg 
+{
+  fill:#fff;
+  color: #fff;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+</style>		
+				</div>
+                <div class="widget-icons pull-right">
+               
+                </div>
+                <div class="clearfix"></div>
+              </div>
+
+              
+        <!-- project team & activity end -->
+
+
+      </section>
+     
+		 
+		 </a></center>
+        
+      </div>
+    </section>
+    <!--main content end-->
+  </section>
+  <!-- container section start -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+	<!-- /Services section -->
+	
+	
+	
+	<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 38px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  padding: 0px;
+  border-radius: 8px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+</style>
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">&#x1F51D;</button>
+	<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+	
+	
+	
+	
+		
+	
+	
+	
+
+
+			  
+					  
+					  
+					  
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+          </div>
+          
+
+      </section>
+     
+	
+	
+	 
+	 
+    </section>
+    <!--main content end-->
+  </section>
+  <!-- container section start -->
+
+  <!-- javascripts -->
+
+
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <!-- bootstrap -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- nice scroll -->
+  <script src="js/jquery.scrollTo.min.js"></script>
+  <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+  <!-- charts scripts -->
+ 
+  
+    <!--custome script for all page-->
+    <script src="js/scripts.js"></script>
+    <!-- custom script for this page-->
+
+    <script src="js/jquery.slimscroll.min.js"></script>
+   
+	
+	
+
+</body>
+
+</html>

@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VLSI physical design interview questions and answers">
+  <meta name="author" content="vlsi backend adventure">
+    <meta property="og:image" content="img/pdqna.JPG">
+  <meta name="keyword" content="physical design question answers, synopsys physical design interview questions, qualcomm physical design questions, physical design interview questions ding ma pdf, amd physical design questions, cadence physical design questions, intel physical design interview questions, google physical design interview questions, apple physical design question answers">
+  <meta name="keyword" content="factors in deciding clock gating cell placement, non default rule, why crosstalk important in design">
+  <link rel="shortcut icon" href="img/icon.png" alt="VLSI Back-End adventure">
+  <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+
+<style>
+      .unselectable {
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color: #000000;
+      }
+    </style>
+
+   <style>
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      div {
+        border: 0px dotted #000000;
+      }
+      .portrait {
+        height: 100%;
+        width: 40px;
+      }
+      .landscape {
+        height: 100%;
+        width: 80px;
+      }
+      .square {
+        height: 100%;
+        width: 100px;
+      }
+    </style>
+	<style type="text/css">
+.mobileShow {display: none;}
+
+/* Smartphone Portrait and Landscape */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px){ 
+.mobileShow {display: inline;}
+}
+.mobileHide { display: inline; }
+
+/* Smartphone Portrait and Landscape */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px){
+.mobileHide { display: none;}
+}
+</style>
+
+  <title>Physical Design Question & Answers | Q&A |Physical Design| VLSI Back-End Adventure</title>
+
+  <!-- Bootstrap CSS -->
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <link href="css/elegant-icons-style.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet" />
+  <!-- =======================================================
+    Theme Name: Feroz Ahmed
+    Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+
+
+
+
+  <!-- container section start -->
+  <section id="container" class="" >
+
+
+    <header class="header dark-bg" class="nav" style="position:fixed;" "top:0px;>
+      <div class="toggle-nav" ">
+        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+      </div>
+
+      <!--logo start-->
+      <a href="index.html" class="logo">VLSI <span class="lite">Back-End </span>Adventure</a>
+      <!--logo end-->
+
+      <div class="nav search-row" id="top_menu">
+        <!--  search form start -->
+        <ul class="nav top-menu">
+          <li>
+            <form class="navbar-form">
+              <input class="form-control" placeholder="Search" type="text">
+            </form>
+          </li>
+        </ul>
+        <!--  search form end -->
+      </div>
+      
+        <style>.goog-logo-link {   display:none !important; } .goog-te-gadget{ color: transparent !important;} </style>
+<div style="position:absolute; left:1000px;">   <div class="nav search-row" id="top_menu">
+<div id="google_translate_element"> </div>
+<script type="text/javascript">function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');}</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</div></div>
+      
+
+      <div class="top-nav notification-row">
+        <!-- notificatoin dropdown start-->
+        <ul class="nav pull-right top-menu">
+
+          <!-- task notificatoin start -->
+        
+            <ul class="dropdown-menu extended tasks-bar">
+              <div class="notify-arrow notify-arrow-blue"></div>
+            </ul>
+          
+         
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="">
+                            <span class="profile-ava">
+                                <img  src="img/feroz.jpg">
+                            </span>
+                            <span class="username">Feroz Ahmed</span>
+                            <b class="caret"></b>
+                        </a>
+            <ul class="dropdown-menu extended logout">
+              <div class="log-arrow-up"></div>
+              <li class="eborder-top">
+                 <a href="https://www.linkedin.com/in/ferozchoudhary/"><i class="fa fa-linkedin"> </i> My LinkedIn Profile</a>
+              </li>
+              <li>
+                <a href="https://youtube.com/c/FerozAhmed_PhysicalDesign?sub_confirmation=1"><i class="fa fa-youtube"> </i>Youtube Channel</a>				
+              </li>
+			  <li>
+                <a href="http://t.me/VLSI_Learning"><i class="fa fa-telegram"> </i> Telegram</a>
+              </li>
+			   <li>
+                <a href="https://github.com/ferozer"><i class="fa fa-github"> </i> Github</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/rising_legend/"><i class="fa fa-instagram"> </i> Instagram</a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/zoref5619"><i class="fa fa-facebook"> </i> Facebook</a>
+              </li>
+              
+             
+              <li>
+              
+              </li>
+            </ul>
+          </li>
+      </div>
+	  
+    </header>
+    <!--header end-->
+
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse " style="position:fixed;" "top:0px;>
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu">
+          <li class="active">
+            <a class="" href="index.html">
+                          <i class="icon_house_alt"></i>
+                          <span>Home</span>
+                      </a>
+          </li>
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Physical Design</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="logic_synthesis.html">Logic Synthesis</a></li>
+              <li><a class="" href="pd_inputs.html">PD Inputs</a></li>
+			   <li><a class="" href="floorplan.html">Floorplan</a></li>
+              <li><a class="" href="powerplan.html">Powerplan</a></li>
+			   <li><a class="" href="placement.html">Placement</a></li>
+              <li><a class="" href="cts.html">Clock Tree Synthesis</a></li>
+			  <li><a class="" href="routing.html">Routing</a></li>
+              <li><a class="" href="sta.html">Static Timing Analysis</a></li>
+            </ul>
+          </li>
+		  
+		  <li>
+		   <a class="" href="pd_verification.html">
+                       <i class="icon_document_alt"></i>
+                          <span>PD Verification</span>
+                      </a></li>
+		  
+		  <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>PD Analysis</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="congestion_analysis.html">Congestion Analysis</a></li>
+              <li><a class="" href="power_analysis.html">Power Analysis</a></li>
+			   <li><a class="" href="ir_analysis.html">IR Analysis</a></li>
+            </ul>
+          </li>
+		  
+		  <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>PD Essentials</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="pd_issues.html">Issues in PD</a></li>
+              <li><a class="" href="pd_cells.html">Cells in PD</a></li>
+			   <li><a class="" href="io_design.html">IO Design</a></li>
+			     <li><a class="" href="delay_models.html">Delay Models</a></li>
+              <li><a class="" href="eco.html">ECO</a></li>
+			   <li><a class="" href="std_cell_types.html">Types of Std Cells</a></li>
+            </ul>
+          </li>
+		  
+		  
+		   <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Discontinuity</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="dfm_dfy.html">DFM/DFY</a></li>
+              <li><a class="" href="mc_mm_ocv.html">MC/MM/OCV</a></li>
+            </ul>
+          </li>
+		  
+		  <li>
+		   <a class="" href="videos.html">
+                       <i class="icon_desktop"></i>
+                          <span>Videos</span>
+                      </a></li>
+		<li>  <a class="" href="sta_numericals.html">
+                       <i class="icon_table"></i>
+                          <span>STA Numericals</span>
+                      </a>
+					  </li>
+		  
+		  
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_piechart"></i>
+                          <span>Q&A</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="pd_mcqs.html">PD MCQs</a></li>
+              <li><a class="" href="pd_qa.html">Physical Design</a></li>
+              <li><a class="" href="digital_electronics.html">Digital Electronics</a></li>
+			  <li><a class="" href="cmos_fundamentals.html">CMOS Fundamentals</a></li>
+			  <li><a class="" href="verilog.html">Verilog</a></li>
+              <li><a class="" href="tcl.html">TCL Scripting</a></li>
+              <li><a class="" href="perl.html">PERL Scripting</a></li>
+            </ul>
+          </li>
+          <li>
+		   <a class="" href="Extras.html">
+                       <i class="icon_document_alt"></i>
+                          <span>Extras</span>
+                      </a></li>
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+    <!--sidebar end-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+	  
+        <!--overview start-->
+        <div class="row">
+          <div class="col-lg-12">
+           
+            <ol class="breadcrumb">
+              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+              <li><a href="#">PD</a></li>
+			  <li><i class="fa fa-document"></i><a href="#">Physical Design Q&A </a></li>
+            </ol>
+          </div>
+        </div>
+
+        
+          <!--/.col-->
+
+        </div>
+        <!--/.row-->
+
+
+       
+<!-- Services section -->
+
+	
+<div class="unselectable">
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+</head>
+<body>
+
+ <style>
+body  {
+  background-image: url("img/1231.jpg");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+</style>
+
+
+
+
+
+
+<!-- Today status end -->
+
+<a name="1"></a>
+
+        <div class="row">
+		
+		
+
+		<!--/col-->
+		 
+         <div class="col-md-2"  style="position:sticky; 
+		  top:60px;">
+            	  <div class="row">
+  <div class="panel panel-default col-sm-14">
+<div class="emptyBlocks"></div>
+
+   
+    <div class="panel-body"><div class="sidebar">
+<div class="mobileShow"> <center>
+
+</div></center><br>
+    
+<div class="mobileHide">
+<center>
+</center></div>
+
+
+    </div>
+  </div>
+</div>
+  </div>
+	 <!--/social-box-->
+          </div> 
+
+          <div class="col-lg-8 col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-heading" style="position:sticky; 
+		  top:60px;">
+		  <h2><a name="1"></a><a name="1"></a>
+                <i class="fa fa-flag-o red"></i><h2><b>Physical Design Q&A </h2></b>
+				
+
+				
+              </div>
+              <div class="panel-body">
+                <table class="table bootstrap-datatable countries">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+				  
+				  
+			
+
+<style>
+			 .bullets {
+			 }
+			 .bullets li {
+			 list-style-type: square;
+			 )
+			</style>
+
+
+
+
+
+<h4><b>Q351. Factor in deciding the clock gating cell placement  </b></h4>
+<div class="well">
+a)	Timing, start from register which is generating the enable signal and ending at clock gater (ICG or CGC)  <br>
+b)	CGC are placed during placement stage  <br>
+c)	Clock path delays are ZERO at placement stage <br> 
+d)	Data path delay will decide the clock gating placement
+</div><br>
+
+<h4><b>Q352. NDR, non-default routing rules.</b></h4>
+<div class="well">
+a. Any change in default routing rule (minSpace, minWidth), is called NDR <br>
+b. WIDTH: <ul>
+i. EM (electro migration) <br>
+ii. Low resistance </ul>
+c. Spacing: <ul>
+i. XTALK to data nets <br>
+ii. Only in specific condition where data net transition is faster than clock net, it may create XTALK on clock, Spacing is helping in reducing this XTALK.
+</ul></div><br>
+
+
+<h4><b>Q353. Why is XTALK so important in design?  </b></h4>
+<div class="well">
+a)	It effect hold and setup together as the polarity of XTALK is not fixed. <br>
+b)	Setup path delay will increase with XTALK effect <br>
+c)	Hold path delay will reduce with XTALK at the same time.<br> 
+d)	By fixing XTALK, it fixed the setup and hold path at the same time.
+</div><br>
+
+
+<h4><b>Q354. Why is spacing preferred over shielding of clock nets? </b></h4>
+<div class="well">
+a. Shielding adds extra ground cap to clock nets which is increasing the load. <br>
+b. Shielding also consume more routing resource.
+</div>
+
+<br>
+
+<h4><b>Q355. Is shielding or spacing hard constraints or soft constraints for clock nets? </b></h4>
+<div class="well">
+a)	This is soft constraints; tool will follow wherever space is available 
+b)	Typically, in congested areas, these are not getting followed. 
+c)	Clock nets always has more than 70% nets NDR honored
+</div><br>
+
+<h4><b>Q356. Why is shielding percentage reduced at post_route stage compares to CTS stage? </b></h4>
+<div class="well">
+a. Difference between Routing estimation to actual routes <br>
+b. More areas become congested, so the NDR reduced in design. <br>
+c. STEPS: <ul>
+i. Shielding is removed <br>
+ii. Actual routing of signal nets completed <br>
+iii. Shielding will be re-applied wherever it is possible.</ul>
+</div><br>
+
+<h4><b>Q357. Select the cells required for CTS </b></h4>
+<div class="well">
+a. Main clock tree <br>
+b. Size_only <br>
+c. Delay insertion
+ </div><br>
+
+<h4><b>Q358. Debug steps for hold fixing:  </b></h4>
+<div class="well">
+a)	Review the list of cells given for hold fixing <br>
+b)	Check that cells should be available (should not have dont_use attribute to 1) <br>
+c)	Check the command to make these cells available for hold (set_prefer –min) <br>
+d)	Check the hold corner is available
+</div><br>
+
+<h4><b>Q359. Fixing timing on clock gating vios:  </b></h4>
+<div class="well">
+a. Fixing on data path <br>
+b. Reduce clock insertion delay on startpoint (useful Skew / floatpin)
+</div><br>
+
+
+<h4><b>Q360. Command to report all vios to clock_gater</b></h4>
+<div class="well">
+foreach_in_collection pin [all_fanin -to I_SDRAM_TOP/I_SDRAM_IF/clk_gate_mega_shift_1_reg[0]/latch/EN -startpoints_only -flat] {report_timing -nosplit -nworst 1 -max_paths 1 -from [get_pins $pin] -to [get_pins I_SDRAM_TOP/I_SDRAM_IF/clk_gate_mega_shift_1_reg[0]/latch/EN] >> ./clock_gate_vios.rpt }
+</div>
+
+
+
+
+
+
+				  
+					  
+                  </tbody>
+                </table>
+ 							<ul class="pagination">
+  <li class="page-item"><a class="page-link" href="pd_qa_35.html">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="pd_qa_31.html">31</a></li>
+  <li class="page-item"><a class="page-link" href="pd_qa_32.html">32</a></li>
+  <li class="page-item"><a class="page-link" href="pd_qa_33.html">33</a></li>
+  <li class="page-item"><a class="page-link" href="pd_qa_34.html">34</a></li>
+  <li class="page-item"><a class="page-link" href="pd_qa_35.html">35</a></li>
+  <li class="page-item active"><a class="page-link" href="pd_qa_36.html">36</a></li>
+  <li class="page-item"><a class="page-link" href="pd_qa_37.html">37</a></li>
+  <li class="page-item"><a class="page-link" href="pd_qa_38.html">38</a></li>
+  <li class="page-item"><a class="page-link" href="pd_qa_39.html">39</a></li>
+  <li class="page-item"><a class="page-link" href="pd_qa_40.html">40</a></li>  
+  <li class="page-item"><a class="page-link" href="">..</a></li>
+  <li class="page-item"><a class="page-link" href="pd_qa_49.html">49</a></li>
+  <li class="page-item"><a class="page-link" href="pd_qa_50.html">50</a></li>
+  <li class="page-item"><a class="page-link" href="pd_qa_37.html">Next</a></li>
+</ul>
+              </div>
+
+            </div>
+
+          </div>
+          
+		  
+		  
+		  
+	
+		  
+		
+		  
+  
+		  
+ <div class="col-md-2" style="position:sticky; 
+		  top:-1120px;">
+            	  <div class="row">
+  <div class="panel panel-default col-sm-14">
+<div class="emptyBlocks"></div>
+
+    
+    <div class="panel-body"><div class="sidebar">
+
+
+
+
+
+
+
+
+
+<center><a href="pd_qa.html" ><span class="icon_download_alt"></span> <img src="images/book.jpg"></a>	</center>
+	
+      
+<BR>
+            <div class="btn-row">
+                  <div class="btn-group-vertical">
+				  
+                    <a href="digital_electronics.html"><button class="btn btn-default" type="button">Digital Electronics Q&A </button></a>
+                    <a href="pd_mcqs.html"><button class="btn btn-default" type="button"> Physical Design MCQs </button></a>
+					<a href="sta_numericals.html"><button class="btn btn-default" type="button"> STA Numericals</button></a>
+                    <a href="pd_verification.html"><button class="btn btn-default" type="button"> PD Verification</button></a>
+				  </div>
+                </div>
+
+				
+				
+
+		
+				
+    </div>
+	
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="panel-group wrap" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Logic Synthesis
+        </a>
+      </h4> </div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">  <div class="panel-body">
+       <ul class="bullets">
+<li>What is synthesis?</li>
+<li>Goals of synthesis</li>
+<li>Synthesis Flow</li>
+<li>Synthesis (input & output)</li>
+<li>HDL file gen. & lib setup</li>
+<li>Reading files</li>
+<li>Design envi. Constraints </li>
+<li>Compile</li>
+<li>Generate Reports</li>
+<li>Write files<br></li>
+</ul><center><a class="btn btn-danger" href="logic_synthesis.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="headingTwo">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          PD Inputs
+        </a>
+      </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">       <ul class="bullets">
+<li>Netlist(.v or .vhd)</li>
+<li>Constraints</li>
+<li>Liberty Timing File(.lib or .db)</li>
+<li>Library Exchange Format(LEF)</li>
+<li>Technology Related files</li>
+<li>TLU+ File</li>
+<li>Milkyway Library</li>
+<li>Power Specification File</li>
+<li>Optimization Directives</li>
+<li>Design Exchange Formats</li>
+<li>Clock Tree Constraints/ Specification</li>
+<li>IO Information File</li></ul>
+<center><a class="btn btn-danger" href="pd_inputs.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="headingThree">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          FloorPlan
+        </a>
+      </h4>
+        </div>
+        
+		<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body"><ul class="bullets">
+<li>import design</li>
+<li>sanity checks</li>
+<li>partitioning (flat and hierarchy)</li>
+<li>objectives of floorplan</li>
+<li>Inputs of floorplan</li>
+<li>Floorplan flowchart</li>
+<li>Floorplan Techniques</li>
+<li>Terminologies and definitions  </li>
+<li>Steps in FloorPlan </li>
+<li>Utilization</li>
+<li>IO Placement</li>
+<li>Macro Placement</li>
+<li>Macro Placement Tips</li>
+<li>Blockages (soft,hard,partial)</li>
+<li>Halo/keepout margin</li>
+<li>Issues arises due to bad floor-plan)</li>
+<li>FloorPlan Qualifications</li>
+<li>FloorPlan Output</li></ul>
+<center><a class="btn btn-danger" href="floorplan.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="headingFour">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          PowerPlan
+        </a>
+      </h4>
+        </div>
+        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+          <div class="panel-body"><ul class="bullets">
+<li>levels of power distribution </li>
+<li>Power Management</li>
+<li>Powerplanning involves</li>
+<li>Inputs of powerplan</li>
+<li>Properties of ideal powerplan</li>
+<li>Power Information </li>
+<li>PowerPlan calculations</li>
+<li>Sub-Block configuration</li>
+<li>fullchip configuration</li>
+<li>UPF Content</li>
+<li>Isolation Cell</li>
+<li>Level Shifters</li>
+<li>Retention Registers</li>
+<li>Power Switches</li>
+<li>Types of Power dissipation</li>
+<li>IR Drop</li>
+<li>Electromigration</li></ul>
+<center><a class="btn btn-danger" href="powerplan.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="headingFour">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFour">
+          Placement
+        </a>
+      </h4>
+        </div>
+        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+          <div class="panel-body"><ul class="bullets">
+<li>Pre-Placement</li>
+<li>Pre-Placement Optimization</li>
+<li>Placement</li>
+<li>Placement Objectives</li>
+<li>Goals of Placement</li>
+<li>Inputs of Placement</li>
+<li>Checks Before placement </li>
+<li>Placement Methods(Timing & Congestion)</li>
+<li>Placement Steps</li>
+<li>Placement Optimization </li>
+<li>Placement Qualifications</li>
+<li>Placement Outputs</li></ul>
+<center><a class="btn btn-danger" href="placement.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="heading8">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapseFour">
+          CTS
+        </a>
+      </h4>
+        </div>
+        <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+          <div class="panel-body"><ul class="bullets">
+<li>Pre-CTS Optimization</li></a>
+<li>CTS</li></a>
+<li>Diff b/w HFNS & CTS</li></a>
+<li>Diff b/w Clock & normal buffer</li></a>
+<li>CTS inputs</li></a>
+<li>CTS Goals</li></a>
+<li>Clock latency</li></a>
+<li>Clock problems </li></a>
+<li>Main concerns for Clock design </li></a>
+<li>Clock Skew  </li></a>
+<li>Clock Jitter</li></a>
+<li>CTS Pre requisites</li></a>
+<li>CTS Objects</li></a>
+<li>CTS Flow</li></a>
+<li>Clock Tree Reference</li></a>
+<li>Clock Tree Exceptions</li></a>
+<li>CTS Algorithm</li></a>
+<li>Analyze the Clock tree</li></a>
+<li>Post CTS Optimization</li></a>
+<li>CTS Outputs</li></ul>
+<center><a class="btn btn-danger" href="cts.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="headingsix">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsesix" aria-expanded="false" aria-controls="collapseFour">
+          Routing
+        </a>
+      </h4>
+        </div>
+        <div id="collapsesix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingsix">
+          <div class="panel-body"><ul class="bullets">
+<li>Importance of Routing as Technology Shrinks</li>
+<li>Routing Objectives</li>
+<li>Routing</li>
+<li>Routing Inputs</li>
+<li>Routing Goals</li>
+<li>Routing constraints</li>
+<li>Routing Flow</li>
+<li>Trial/Global Routing</li>
+<li>Track Assignment</li>
+<li>Detail/Nano Routing</li>
+<li>Grid based Routing</li>
+<li>Routing Preferences</li>
+<li>Post Routing Optimization </li>
+<li>Filler Cell Insertion</li>
+<li>Metal Fill</li>
+<li>Spare Cells Tie-up/ Tie-down</li></ul>
+<center><a class="btn btn-danger" href="routing.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="headingseven">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseseven" aria-expanded="false" aria-controls="collapseFour">
+          STA
+        </a>
+      </h4>
+        </div>
+        <div id="collapseseven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingseven">
+          <div class="panel-body"><ul class="bullets">
+<li>Diff b/w DTA & STA</li>
+<li>Static Timing Analysis</li>
+<li>main steps in STA</li>
+<li>STA(input & output)</li>
+<li>Timing Report</li>
+<li>Clocked storage elements</li>
+<li>Delays </li>
+<li>Pins related to clock </li>
+<li>Timing Arc</li>
+<li>Timing Unate</li>
+<li>Clock definitions in STA</li>
+<li>Timing Paths </li>
+<li>Timing Path Groups </li>
+<li>Clock Latency </li>
+<li>Insertion Delay </li>
+<li>Clock Uncertainty</li>
+<li>Clock Skew </li>
+<li>Clock Jitter </li>
+<li>Glitch</li>
+<li>Pulse width</li>
+<li>Duty Cycle </li>
+<li>Transition/Slew</li>
+<li>Asynchronous Path</li>
+<li>Critical Path</li>
+<li>Shortest Path </li>
+<li>Clock Gating Path</li>
+<li>Launch path </li>
+<li>Arrival Path </li>
+<li>Required Time</li>
+<li>Common Path Pessimism(CPP/CRPR)</li>
+<li>Slack </li>
+<li>Setup and Hold time</li>
+<li>Setup & hold time violations</li>
+<li>Recovery Time</li>
+<li>Removal Time </li>
+<li>Recovery & Removal time violations</li>
+<li>Single Cycle path </li>
+<li>Multi Cycle Path </li>
+<li>Half Cycle Path</li>
+<li>False Path</li>
+<li>Clock Domain Crossing(CDC) </li>
+<li>Clock Domain Synchronization Scheme</li>
+<li>Bottleneck Analysis</li>
+<li>Multi-VT Cells(HVT LVT SVT)</li>
+<li>Time Borrowing/Stealing</li>
+<li>Types of STA (PBA GBA)</li>
+<li>Diff b/w PBA & GBA </li>
+<li>Block based STA & Path based STA</li></ul>
+<center><a class="btn btn-danger" href="sta.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+<br>
+
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="heading10">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false" aria-controls="collapseFour">
+          Congestion Analysis
+        </a>
+      </h4>
+        </div>
+        <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
+          <div class="panel-body"><ul class="bullets">
+<li>Congestion Analysis</li>
+<li>Routing Congestion Analysis</li>
+<li>Placement Cong. Analysis</li>
+<li>Routing Congestion causes</li>
+<li>Congestion Fixes</li>
+<li>Global & local cong.</li>
+<li>Congestion Profiles</li></ul>
+<center><a class="btn btn-danger" href="congestion_analysis.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="heading11">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false" aria-controls="collapseFour">
+          Power Analysis
+        </a>
+      </h4>
+        </div>
+        <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
+          <div class="panel-body"><ul class="bullets">
+<li>Power Analysis</li>
+<li>Leakeage Power</li>
+<li>Switching Power</li>
+<li>Short Circuit</li>
+<li>Leakage/static Power </li>
+<li>Static power Dissipation</li>
+<li>Types of Static Leakage</li>
+<li>Static Power Reduction Techniques </li>
+<li>Dynamic/Switching Power </li>
+<li>Dynamic Power calculation depends on </li>
+<li>Types of Dynamic Power </li>
+<li>Dynamic Power Reduction Techniques </li></ul>
+<center><a class="btn btn-danger" href="power_analysis.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="heading12">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapseFour">
+          IR Analysis
+        </a>
+      </h4>
+        </div>
+        <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
+          <div class="panel-body"><ul class="bullets">
+<li>IR Drop Analysis</li>
+<li>Types of IR Drop & their methodologies </li>
+<li>IR Drop Reasons </li>
+<li>IR Drop Robustness Checks </li>
+<li>IR Drop Impacts </li>
+<li>IR Drop Remedies </li>
+<li>Ldi/dt Effects </li></ul>
+<center><a class="btn btn-danger" href="ir_analysis.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+ </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+<br>
+ <div class="panel">
+        <div class="panel-heading" role="tab" id="heading13">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse13" aria-expanded="false" aria-controls="collapseFour">
+          Issues in PD
+        </a>
+      </h4>
+        </div>
+        <div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13">
+          <div class="panel-body"><ul class="bullets">
+<li>Design Parasitics</li>
+<li>Latch-Up </li>
+<li>Electrostatic Discharge(ESD) </li>
+<li>Electromigration </li>
+<li>Antenna Effect </li>
+<li>Crosstalk </li>
+<li>Soft Errors </li>
+<li>Sef Heating </li>
+</ul>
+<center><a class="btn btn-danger" href="pd_issues.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+    </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading14">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse14" aria-expanded="false" aria-controls="collapseFour">
+          Cells in PD
+        </a>
+      </h4>
+        </div>
+        <div id="collapse14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading14">
+          <div class="panel-body"><ul class="bullets">
+<li>Cells in PD</li>
+<li>Standard Cells </li>
+<li>ICG Cells </li>
+<li>Well Taps </li>
+<li>End Caps </li>
+<li>Filler Cells </li>
+<li>Decap Cells </li>
+<li>ESD Clamp </li>
+<li>Spare Cells</li>
+<li>Tie Cells</li>
+<li>Delay Cells</li>
+<li>Metrology Cells </li></ul>
+<center><a class="btn btn-danger" href="pd_cells.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading15">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse15" aria-expanded="false" aria-controls="collapseFour">
+          IO Design
+        </a>
+      </h4>
+        </div>
+        <div id="collapse15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading15">
+          <div class="panel-body"><ul class="bullets">
+<li>IO Pads</li>
+<li>Types of IO Pads</li>
+      </ul>
+<center><a class="btn btn-danger" href="io_design.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+
+  </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading16">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse16" aria-expanded="false" aria-controls="collapseFour">
+          Delay Models
+        </a>
+      </h4>
+        </div>
+        <div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading16">
+          <div class="panel-body"><ul class="bullets">
+<li>Delay Calculation</li>
+<li>Delay Models</li>
+<li>Interconnect Delay Models<br> </li>
+<li>Cell Delay Models</li>   </ul>     
+<center><a class="btn btn-danger" href="delay_models.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+  
+</div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading17">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse17" aria-expanded="false" aria-controls="collapseFour">
+          ECO
+        </a>
+      </h4>
+        </div>
+        <div id="collapse17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading17">
+          <div class="panel-body"><ul class="bullets">
+<li>Engineering Change Order</li>
+<li>Post Synthesis ECO </li>
+<li>Post Route ECO </li>
+<li>Post Silicon ECO </li>
+<li>Metal Layer ECO Example </li></ul>
+<center><a class="btn btn-danger" href="eco.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading18">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse18" aria-expanded="false" aria-controls="collapseFour">
+          Types of Std cells
+        </a>
+      </h4>
+        </div>
+        <div id="collapse18" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading18">
+          <div class="panel-body"><ul class="bullets">
+<li>std cell library types</li></a>
+<li>Classification wrt density and Vth </li> </ul>
+<center><a class="btn btn-danger" href="std_cell_types.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+         </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+<br>
+	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading19">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse19" aria-expanded="false" aria-controls="collapseFour">
+          DFM/DFY
+        </a>
+      </h4>
+        </div>
+        <div id="collapse19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading19">
+          <div class="panel-body"><ul class="bullets">
+<li>The Discontinuity</li>
+<li>Discontinuity: Classification</li>
+<li>DFM/DFY </li>
+<li>Yield Classification </li>
+<li>Why DFM/DFY? </li>
+<li>DFM/DFY Solution </li>
+<li>Wire Spreading</li>
+<li>metal Fill</li>
+<li>CAA</li>
+<li>CMP Aware-Design</li>
+<li>Redundant Via</li>
+<li>RET</li>
+<li>Litho Process Check(LPC)</li>
+<li>Layout Dependent Effects </li>
+<li>Resolution Enhancement Techniques </li>
+<li>Types of RET</li>
+<li>Optical Proximity Correction(OPC)</li>
+<li>Scattering Bars</li>
+<li>Multiple Patterning</li>
+<li>Phase-shift Masking </li>
+<li>Off-Axis Illumination</li></ul>
+<center><a class="btn btn-danger" href="dfm_dfy.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->	   <div class="panel">
+        <div class="panel-heading" role="tab" id="heading20">
+          <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse20" aria-expanded="false" aria-controls="collapseFour">
+          MC/MM/OCV
+        </a>
+      </h4>
+        </div>
+        <div id="collapse20" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading20">
+          <div class="panel-body"><ul class="bullets">
+<li>Corners</li>
+<li>Need for corner analysis</li>
+<li>PVT Variations </li>
+<li>Corner Analysis</li>
+<li>PVT/RC Corners</li>
+<li>Temperature Inversion</li>
+<li>Cross Corner Analysis</li>
+<li>Modes of Analysis</li>
+<li>MC/MM Analysis</li>
+<li>OCV</li>
+<li>Derating</li>
+<li>OCV Timing Checks</li>
+<li>OCV Enhancements</li>
+<li>AOCV </li>
+<li>SSTA</li>
+<li>CRPR/CPPR</li></ul>
+          <center><a class="btn btn-danger" href="mc_mm_ocv.html" ><span class="icon_download_alt"></span> Go To page </a></center>
+
+		  </div>
+        </div>
+      </div>
+      <!-- end of panel -->
+	 
+
+    </div>
+    <!-- end of #accordion -->
+
+
+
+
+<div class="panel panel-default col-sm-14">
+<div class="emptyBlocks"></div>
+    <div class="panel-body"><div class="sidebar">
+<div class="mobileShow"> <center>
+
+</div></center><br>
+    
+<div class="mobileHide">
+<center>
+</center></div>
+</div></div></div>
+
+
+
+
+  </div>
+  <!-- end of wrap -->
+
+
+<style>
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: grey;
+  border-width: 1px;
+} 
+</style>
+
+
+
+
+
+
+<!-- end of container -->
+
+  </div>
+	 <!--/social-box-->
+          </div> 	  
+		  
+		  
+		  
+		  
+		  
+
+		
+            	  <div class="row">
+  <div class="panel panel-default col-sm-14">
+<div class="emptyBlocks"></div>
+
+    <style>
+body {
+  margin: 0;
+  font-family: 'Roboto';
+  font-size: 14px;
+  background: #455A64;
+}
+
+
+
+.container {
+  max-width: 970px;
+}
+
+
+.wrap {
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 2, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 0px;
+}
+
+a:focus,
+a:hover,
+a:active {
+  outline: 1;
+  text-decoration: black;
+}
+
+.panel {
+  border-width: 0 0 4px 0;
+  border-style: solid;
+  border-color: #696969;
+  background: none;
+  box-shadow: black;
+}
+
+.panel:last-child {
+  border-bottom: none;
+}
+
+.panel-group > .panel:first-child .panel-heading {
+  border-radius: 0px 0px 0 0;
+}
+
+.panel-group .panel {
+  border-radius: 0;
+}
+
+.panel-group .panel + .panel {
+  margin-top: 0;
+}
+
+.panel-heading {
+  background-color: #black;
+  border-radius: 0;
+  border: none;
+  color: #000000;
+  padding: 0;
+}
+
+.panel-title a {
+  display: block;
+  color: #000000;
+  padding: 0px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.panel-body {
+  background: #fff;
+}
+
+.panel:last-child .panel-body {
+  border-radius: 1 0 px px;
+}
+
+.panel:last-child .panel-heading {
+  border-radius: 0 0 4px 4px;
+  transition: border-radius 0.3s linear 0.2s;
+}
+
+.panel:last-child .panel-heading.active {
+  border-radius: 0;
+  transition: border-radius linear 0s;
+}
+/* #bs-collapse icon scale option */
+
+.panel-heading a:before {
+  position: absolute;
+  font-family: 'Material Icons';
+  right: px;
+  top: 0px;
+  font-size: 24px;
+  transition: all 0.5s;
+  transform: scale(1);
+}
+
+.panel-heading.active a:before {
+  content: ' ';
+  transition: all 0.9s;
+  transform: scale(0);
+}
+
+#bs-collapse .panel-heading a:after {
+  content: ' ';
+  font-size: 24px;
+  position: absolute;
+  font-family: 'Material Icons';
+  right: 5px;
+  top: 10px;
+  transform: scale(0);
+  transition: all 0.5s;
+}
+
+#bs-collapse .panel-heading.active a:after {
+  content: '\e909';
+  transform: scale(1);
+  transition: all 0.5s;
+}
+/* #accordion rotate icon option */
+
+#accordion .panel-heading a:before {
+  content: '\e316';
+  font-size: 24px;
+  position: absolute;
+  font-family: 'Material Icons';
+  right: 5px;
+  top: 10px;
+  transform: rotate(180deg);
+  transition: all 0.5s;
+}
+
+#accordion .panel-heading.active a:before {
+  transform: rotate(0deg);
+  transition: all 0.5s;
+}
+	</style>
+ 
+
+   
+   
+
+
+
+<script>
+$(document).ready(function() {
+  $('.collapse.in').prev('.panel-heading').addClass('active');
+  $('#accordion, #bs-collapse')
+    .on('show.bs.collapse', function(a) {
+      $(a.target).prev('.panel-heading').addClass('active');
+    })
+    .on('hide.bs.collapse', function(a) {
+      $(a.target).prev('.panel-heading').removeClass('active');
+    });
+});
+</script>
+				
+				
+				
+				
+    </div>
+  </div>
+</div>
+  </div>
+	 <!--/social-box-->
+          </div> 
+		  
+		  
+		  
+		  
+		  
+	
+		  
+		
+
+          <!--/col-->
+
+        </div>
+
+
+
+
+        <!-- statics end -->
+
+
+
+
+        <!-- project team & activity start -->
+        <div class="row">
+          <div class="col-md- portlets">
+            <!-- Widget -->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                
+				<div class="container">
+                
+        
+</div>
+	
+	 
+	  <div class="text-center">
+       
+          <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
+          -->
+          
+		 <center>
+
+
+
+Copyright © 2021 <BR>
+
+<div class="footer-wrapper">
+                        
+                       
+                        <a class="footer-icon linkedin" href="https://www.linkedin.com/in/ferozchoudhary/" target="_blank">
+                           <svg style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" width="35px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#0072FF">
+                              <g>
+                                 <path d="M8,54.7C8,55.4,8.6,56,9.3,56h9.3c0.7,0,1.3-0.6,1.3-1.3V23.9c0-0.7-0.6-1.3-1.3-1.3H9.3   c-0.7,0-1.3,0.6-1.3,1.3V54.7z"/>
+                                 <path d="M46.6,22.3c-4.5,0-7.7,1.8-9.4,3.7c-0.4,0.4-1.1,0.1-1.1-0.5l0-1.6c0-0.7-0.6-1.3-1.3-1.3h-9.4   c-0.7,0-1.3,0.6-1.3,1.3c0.1,5.7,0,25.4,0,30.7c0,0.7,0.6,1.3,1.3,1.3h9.5c0.7,0,1.3-0.6,1.3-1.3V37.9c0-1,0-2,0.3-2.7c0.8-2,2.6-4.1,5.7-4.1c4.1,0,6,3.1,6,7.6v15.9c0,0.7,0.6,1.3,1.3,1.3h9.3c0.7,0,1.3-0.6,1.3-1.3V37.4C60,27.1,54.1,22.3,46.6,22.3z"/>
+                                 <path d="M13.9,18.9L13.9,18.9c3.8,0,6.1-2.4,6.1-5.4C19.9,10.3,17.7,8,14,8c-3.7,0-6,2.3-6,5.4   C8,16.5,10.3,18.9,13.9,18.9z"/>
+                              </g>
+                           </svg>
+                        </a>
+                        <a class="footer-icon youtube" href="https://youtube.com/c/FerozAhmed_PhysicalDesign?sub_confirmation=1" target="_blank">
+                           <svg width="35px" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <g>
+                                 <path d="M31.67,9.179c0,0-0.312-2.353-1.271-3.389c-1.217-1.358-2.58-1.366-3.205-1.443C22.717,4,16.002,4,16.002,4   h-0.015c0,0-6.715,0-11.191,0.347C4.171,4.424,2.809,4.432,1.591,5.79C0.633,6.826,0.32,9.179,0.32,9.179S0,11.94,0,14.701v2.588   c0,2.763,0.32,5.523,0.32,5.523s0.312,2.352,1.271,3.386c1.218,1.358,2.815,1.317,3.527,1.459C7.677,27.919,15.995,28,15.995,28   s6.722-0.012,11.199-0.355c0.625-0.08,1.988-0.088,3.205-1.446c0.958-1.034,1.271-3.386,1.271-3.386s0.32-2.761,0.32-5.523v-2.588   C31.99,11.94,31.67,9.179,31.67,9.179z" fill="#E02F2F"/>
+                                 <polygon fill="#FFFFFF" points="12,10 12,22 22,16"/>
+                              </g>
+                           </svg>
+                        </a>
+						<a class="footer-icon facebook" href="https://www.facebook.com/zoref5619" target="_blank">
+                           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="35px"
+                              viewBox="0 0 512 512" fill="#385C8E" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                              <g>
+                                 <path d="M134.941,272.691h56.123v231.051c0,4.562,3.696,8.258,8.258,8.258h95.159c4.562,0,8.258-3.696,8.258-8.258V273.78h64.519c4.195,0,7.725-3.148,8.204-7.315l9.799-85.061c0.269-2.34-0.472-4.684-2.038-6.44c-1.567-1.757-3.81-2.763-6.164-2.763h-74.316V118.88c0-16.073,8.654-24.224,25.726-24.224c2.433,0,48.59,0,48.59,0c4.562,0,8.258-3.698,8.258-8.258V8.319c0-4.562-3.696-8.258-8.258-8.258h-66.965C309.622,0.038,308.573,0,307.027,0c-11.619,0-52.006,2.281-83.909,31.63c-35.348,32.524-30.434,71.465-29.26,78.217v62.352h-58.918c-4.562,0-8.258,3.696-8.258,8.258v83.975C126.683,268.993,130.379,272.691,134.941,272.691z"/>
+                              </g>
+                           </svg>
+                        </a>
+                        <a class="footer-icon instagram" href="https://www.instagram.com/rising_legend/" target="_blank">
+                           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="35px"
+                              viewBox="0 0 551.034 551.034" xml:space="preserve">
+                              <g>
+                                 <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="275.517" y1="4.57" x2="275.517" y2="549.72" gradientTransform="matrix(1 0 0 -1 0 554)">
+                                 <stop  offset="0" style="stop-color:#E09B3D"/>
+                                 <stop  offset="0.3" style="stop-color:#C74C4D"/>
+                                 <stop  offset="0.6" style="stop-color:#C21975"/>
+                                 <stop  offset="1" style="stop-color:#7024C4"/>
+                              </linearGradient>
+                              <path class="insta-square" style="fill:url(#SVGID_1_);" d="M386.878,0H164.156C73.64,0,0,73.64,0,164.156v222.722
+                                 c0,90.516,73.64,164.156,164.156,164.156h222.722c90.516,0,164.156-73.64,164.156-164.156V164.156
+                                 C551.033,73.64,477.393,0,386.878,0z M495.6,386.878c0,60.045-48.677,108.722-108.722,108.722H164.156
+                                 c-60.045,0-108.722-48.677-108.722-108.722V164.156c0-60.046,48.677-108.722,108.722-108.722h222.722
+                                 c60.045,0,108.722,48.676,108.722,108.722L495.6,386.878L495.6,386.878z"/>
+                              
+                                 <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="275.517" y1="4.57" x2="275.517" y2="549.72" gradientTransform="matrix(1 0 0 -1 0 554)">
+                                 <stop  offset="0" style="stop-color:#E09B3D"/>
+                                 <stop  offset="0.3" style="stop-color:#C74C4D"/>
+                                 <stop  offset="0.6" style="stop-color:#C21975"/>
+                                 <stop  offset="1" style="stop-color:#7024C4"/>
+                              </linearGradient>
+                              <path style="fill:url(#SVGID_2_);" d="M275.517,133C196.933,133,133,196.933,133,275.516s63.933,142.517,142.517,142.517
+                                 S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6c-48.095,0-87.083-38.988-87.083-87.083
+                                 s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083C362.6,323.611,323.611,362.6,275.517,362.6z"/>
+                              
+                              <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="418.31" y1="4.57" x2="418.31" y2="549.72" gradientTransform="matrix(1 0 0 -1 0 554)">
+                                 <stop  offset="0" style="stop-color:#E09B3D"/>
+                                 <stop  offset="0.3" style="stop-color:#C74C4D"/>
+                                 <stop  offset="0.6" style="stop-color:#C21975"/>
+                                 <stop  offset="1" style="stop-color:#7024C4"/>
+                              </linearGradient>
+                                 <circle style="fill:url(#SVGID_3_);" cx="418.31" cy="134.07" r="34.15"/>
+                              </g>
+                           </svg>
+                        </a>
+                     </div>
+
+</div>
+
+  </div>
+	<center>	<img src="images/footer.jpg"><br>	</center><br>
+<style>
+body{
+  background:#eee;
+  
+}
+.main{
+  display:flex;
+  margin-top:10px;
+  align-items:right;
+  justify-content:right;
+}
+.footer-wrapper .footer-icon,
+.footer-wrapper .footer-icon:visited {
+  display: inline-block;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  line-height: 60px;
+  margin: 0 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 28%;
+  box-shadow: 0 5px 15px -5px rgba(0,0,0,0.3);
+  opacity: 0.99;
+}
+.footer-wrapper .footer-icon:before {
+  content: '';
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.footer-wrapper .footer-icon,
+.footer-wrapper .footer-icon:before,
+.footer-wrapper .footer-icon svg{
+  transition: all 0.35s;
+  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  outline: 0;
+}
+.footer-wrapper .footer-icon:before {
+  top: 90%;
+  left: -110%;
+}
+.footer-wrapper .footer-icon:focus,
+.footer-wrapper .footer-icon:hover{
+    background-color: transparent;
+}
+.footer-wrapper .footer-icon svg{
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  height: 30px;
+  margin: auto;
+  font-size: 0;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.footer-wrapper .footer-icon.facebook:before {
+  background-color: #3b5998;
+}
+
+
+.footer-wrapper .footer-icon.telegram:before {
+  background-color: #3cf;
+}
+.footer-wrapper .footer-icon.google:before {
+  background-color: #dc4a38;
+}
+.footer-wrapper .footer-icon.linkedin:before{
+  background-color: #0072FF;
+}
+.footer-wrapper .footer-icon.youtube:before {
+  background-color: #E02F2F;
+}
+.footer-wrapper .footer-icon.youtube:hover svg g path,
+.footer-wrapper .footer-icon.youtube:focus svg g path {
+  fill:#fff;
+}
+.footer-wrapper .footer-icon.youtube:hover svg g polygon,
+.footer-wrapper .footer-icon.youtube:focus svg g polygon {
+  fill:#E02F2F;
+}
+
+.footer-wrapper .footer-icon.instagram:before {
+    background-color: #C21975;
+}
+/* .footer-wrapper .footer-icon.instagram:hover svg,
+.footer-wrapper .footer-icon.instagram:focus svg {
+  filter: invert(200%) sepia(50%) saturate(1) hue-rotate(100deg) brightness(100%) 
+ fill : #FFF;
+}*/
+.footer-icon.instagram:hover svg{
+	fill : #FFF;
+}
+
+.footer-wrapper .footer-icon:focus:before,
+.footer-wrapper .footer-icon:hover:before {
+  top: -10%;
+  left: -10%;
+}
+.footer-wrapper .footer-icon:focus svg,
+.footer-wrapper .footer-icon:hover svg 
+{
+  fill:#fff;
+  color: #fff;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+</style>		
+				</div>
+                <div class="widget-icons pull-right">
+               
+                </div>
+                <div class="clearfix"></div>
+              </div>
+
+              
+        <!-- project team & activity end -->
+
+
+      </section>
+     
+		 
+		 </a></center>
+        
+      </div>
+    </section>
+    <!--main content end-->
+  </section>
+  <!-- container section start -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+	<!-- /Services section -->
+	
+	
+	
+	<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 38px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  padding: 0px;
+  border-radius: 8px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+</style>
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">&#x1F51D;</button>
+	<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+	
+	
+	
+	
+	
+		
+	
+	
+	
+
+
+			  
+					  
+					  
+					  
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+          </div>
+          
+
+      </section>
+     
+	
+	
+	 
+	 
+    </section>
+    <!--main content end-->
+  </section>
+  <!-- container section start -->
+
+  <!-- javascripts -->
+
+
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <!-- bootstrap -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- nice scroll -->
+  <script src="js/jquery.scrollTo.min.js"></script>
+  <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+  <!-- charts scripts -->
+ 
+  
+    <!--custome script for all page-->
+    <script src="js/scripts.js"></script>
+    <!-- custom script for this page-->
+
+    <script src="js/jquery.slimscroll.min.js"></script>
+   
+	
+	
+
+</body>
+
+</html>
